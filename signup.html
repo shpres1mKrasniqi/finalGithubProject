@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="shpresimi.css">
+</head>
+<body>
+<header>
+
+
+    <nav>
+        <div class="logo">
+         <h1>SRF AutoCenter</h1>
+        </div>
+         <ul id="listaemenus">
+             <li><a href="home.html">Home</a></li>
+             <li><a href="produktet.html">Products</a></li>
+             <li><a href="contactus.html">Contact Us</a></li>
+         </ul>
+         <div class="menuIcon">
+
+             <i class="fa-solid fa-bars" onclick="menu()"></i>
+         </div>
+     </nav>
+<script>
+ 
+ let listaemenus = document.getElementById("listaemenus")
+ listaemenus.style.maxHeight="0px";
+
+ function menu(){
+     if(listaemenus.style.maxHeight=="0px"){
+         listaemenus.style.maxHeight="300px";
+     }
+     else{
+         listaemenus.style.maxHeight="0px";
+     }
+ }
+ </script>
+ <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
+</header>
+ <main>
+    <div class="signupContainer">
+        <form action="post">
+           
+                <div class="h2">
+                    <h2>Signup</h2>
+                </div>
+                <div class="emmri">
+                    <input type="text" placeholder="Type Your First Name" required id="emri" name="nejmi">
+                </div>
+        
+                <div class="mbiiemri">
+                    <input type="text" placeholder="Type Your Last Name"required id="mbiemri" name="surnamei">
+                </div>
+                <div class="emii">
+                    <input type="email" placeholder="Type Your Email"required id="imejli" name="emaili">
+                </div>
+                <div class="ppsi">
+                    <input type="password" placeholder="Type Your Email"required id="fjalekalimi" name="pasi">
+                </div>
+                <div class="konfirmopas">
+                    <input type="password" placeholder="Confirm Your Email"required id="fjalekalimi2" name="pasi2">
+                </div>
+                <div class="skeAcc">
+                    <p>Don't have an account? <a href="login.html">Login</a></p>
+                </div>
+                    <button type="submit" class="btnSignup">Signup</button>
+            </form>
+            </div>
+ </main>
+</body>
+</html>

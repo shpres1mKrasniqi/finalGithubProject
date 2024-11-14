@@ -1,0 +1,258 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    background: rgb(237, 237, 237);
+   
+}
+
+nav {
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #0404bc;
+    color: white;
+    position: relative;
+    height: 70px;
+    
+}
+
+nav ul {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+nav ul li {
+    list-style-type: none;
+
+}
+
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+.menuIcon{
+    display: none;
+}
+.menuIcon i{
+    font-size: 30px;
+}
+
+@media(max-width:600px){
+    nav ul{
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        text-align: center;
+        background: #02027c;
+        overflow: hidden;
+    }
+    nav ul li{
+        padding: 10px;
+
+    }
+    
+    .menuIcon{
+        display: block;
+        cursor: pointer;
+    }
+    nav ul li:hover{
+        background: #020255;
+        width: 100%;
+       
+    }
+    
+}
+
+#listaemenus{
+    transition: all 0.5s;
+}
+
+
+/* logi*/
+
+.formcontaineri{ 
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border:2px #020255 solid;
+    width: 300px;
+    height: 250px;
+    text-align: center;
+    border: none;
+    box-shadow: 0px 4px 8px rgb(0, 0, 0, 0.4);
+    border-radius: 20px;
+}
+
+.formcontaineri h2{
+    margin-bottom: 25px;
+    margin-top: 10px;
+    color: #0404bc;
+    text-shadow: 0px 4px 8px rgb(0, 0, 0, 0.2);
+}
+.formcontaineri input{
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 13px;
+    border: none;
+    box-shadow: 0px 4px 8px rgb(0, 0, 0, 0.2);
+    width: 220px;
+    color: #0404bc;
+}
+
+.formcontaineri input::placeholder{
+    color: #020255;
+}
+
+.formcontaineri .dont{
+    margin-top: 17px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.formcontaineri .btn{
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgb(0, 0, 0, 0.2);
+    width: 200px;
+    background: #0404bc;
+    color: aliceblue;
+    font-weight: bold;
+}
+.formcontaineri .btn:hover{
+
+    cursor: pointer;
+    background: #020255;
+    transition: 0.7s;
+    
+}
+/*Pjesa e rregullimit te Signup Formes*/
+
+
+.signupContainer{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border:2px #020255 solid;
+    width: 300px;
+    height: 310px;
+    text-align: center;
+    border: none;
+    box-shadow: 0px 4px 8px rgb(0, 0, 0, 0.4);
+    border-radius: 20px;
+
+}
+.signupContainer h2{
+    margin-top: 10px;
+    color: #0404bc;
+    text-shadow: 0px 4px 8px rgb(0, 0, 0, 0.2);
+
+}
+.signupContainer input{
+    width: 200px;
+    border: none;
+    padding: 8px;
+    margin-top: 10px;
+    font-size: 12px;
+    color: rgb(100, 99, 98);
+    box-shadow: 0px 4px 8px rgb(0, 0, 0, 0.2);
+    border-radius: 13px;
+}
+.signupContainer input::placeholder{
+    color: #020255;
+}
+.signupContainer .skeAcc{
+    font-size: 12px;
+    margin-top: 10px;
+    font-weight: bold;
+    
+}
+
+.signupContainer .btnSignup{
+
+    margin-top: 10px;
+    border: none;
+    border-radius: 13px;
+    background: #0404bc;
+    color: aliceblue;
+    padding: 8px;
+    width: 200px;
+
+}
+
+.signupContainer .btnSignup:hover{
+
+    cursor: pointer;
+    background: #020255;
+    transition: 0.7s;
+
+}
+
+@media(max-width:320px){
+    .formcontaineri{
+        width: 250px;
+        height: 200px;
+    }
+
+    .formcontaineri input{
+        padding: 5px;
+        margin-bottom: 5px;
+        width: 180px;
+    
+    }
+
+    .formcontaineri .btn{
+        margin-top: 7px;
+        padding: 5px;
+        width: 180px;
+    }
+    .signupContainer{
+        padding: 5px;
+        margin-bottom: 5px;
+        width: 250px;
+    }
+
+    .formcontaineri h2{
+        font-size: 15px;
+    }
+
+    .signupContainer .btnSignup{
+        margin-top: 7px;
+        padding: 5px;
+        width: 180px;
+    }
+
+    .signupContainer input{
+        padding: 5px;
+        margin-bottom: 5px;
+        width: 180px;
+    }
+    .signupContainer h2{
+        font-size: 15px;
+    }
+
+     h1{
+        font-size: 15px;
+    }
+    .menuIcon i{
+        font-size: 20px;
+    }
+}
+/*Rregullimi i faqes se produkteve*/
