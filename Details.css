@@ -1,11 +1,11 @@
 .h1{
-    color: green;
+    color: rgb(23, 11, 94);
     
     border-radius: 15px;
     
     }
     .p1{
-        color: green;
+        color: rgb(0, 26, 255);
         
     }
     .dashboard{
@@ -77,6 +77,7 @@
         list-style: none;
         color: #fff;
     }
+    
     .side-menu .cars-name{
     height: 10vh;
     display: flex;
@@ -96,7 +97,7 @@
         align-items: center;
     }
     .side-menu li:hover{
-        background: white;
+        background: rgb(23, 12, 184);
         color: rgb(27, 12, 12);
     
     
