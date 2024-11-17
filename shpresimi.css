@@ -79,7 +79,6 @@ nav ul li a{
     transition: all 0.5s;
 }
 
-
 /* logi*/
 
 .formcontaineri{ 
@@ -100,7 +99,7 @@ nav ul li a{
 .formcontaineri h2{
     margin-bottom: 25px;
     margin-top: 10px;
-    color: #0404bc;
+    color: navy;
     text-shadow: 0px 4px 8px rgb(0, 0, 0, 0.2);
 }
 .formcontaineri input{
@@ -110,7 +109,7 @@ nav ul li a{
     border: none;
     box-shadow: 0px 4px 8px rgb(0, 0, 0, 0.2);
     width: 220px;
-    color: #0404bc;
+    color: navy;
 }
 
 .formcontaineri input::placeholder{
@@ -130,7 +129,7 @@ nav ul li a{
     border-radius: 20px;
     box-shadow: 0px 4px 8px rgb(0, 0, 0, 0.2);
     width: 200px;
-    background: #0404bc;
+    background: navy;
     color: aliceblue;
     font-weight: bold;
 }
@@ -161,7 +160,7 @@ nav ul li a{
 }
 .signupContainer h2{
     margin-top: 10px;
-    color: #0404bc;
+    color: navy;
     text-shadow: 0px 4px 8px rgb(0, 0, 0, 0.2);
 
 }
@@ -190,7 +189,7 @@ nav ul li a{
     margin-top: 10px;
     border: none;
     border-radius: 13px;
-    background: #0404bc;
+    background: navy;
     color: aliceblue;
     padding: 8px;
     width: 200px;
@@ -255,4 +254,4 @@ nav ul li a{
         font-size: 20px;
     }
 }
-/*Rregullimi i faqes se produkteve*/
+
