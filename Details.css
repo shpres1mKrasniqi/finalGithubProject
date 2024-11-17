@@ -59,22 +59,34 @@
     
     }
     h1,h2{
-        color: #200e0e;/*cars*/
+        color: #131212; /*cars*/
     }
     .side-menu{
         position: fixed;
-        background: rgb(194, 5, 5);
+        background: navy;
         width: 20vw;
         min-height: 100vh;
         display: flex;
         flex-direction:column ;
         z-index: 1;
+
+    }
+
+    .side-menu ul li a{
+        text-decoration: none;
+        list-style: none;
+        color: #fff;
     }
     .side-menu .cars-name{
     height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    }
+
+    .cars-name h1{
+        color: #fff;
+        
     }
     .side-menu li{
         font-size: 24px;

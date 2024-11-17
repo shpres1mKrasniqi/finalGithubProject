@@ -114,6 +114,9 @@ button:hover{
         width: 45%;
 
     }
+    .iconat-slider{
+        width: 45%;
+    }
 }
 
 @media (max-width:750px){
@@ -121,26 +124,42 @@ button:hover{
         width: 100%;
         
     }
+
+    .iconat-slider{
+        width: 100%;
+    }
 }
 
-/*Logot */
+/*Pjesa e ikonave*/
 
-nav ul li {
-    width: 50px;
-    height: 100px;
+.iconat-slider{
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    position: sticky;
+    top: 100px;
 }
 
-nav img{
-    width: 60px;
-    height: 60px;
-    align-items: center;
+.iconat-slider img{
+    margin-top: 10%;
+    height: 5%;
+    width: 5%;
+    display: none;
+  
+}
+
+img.shfaqSlidet{
+    display: block;
+}
+
+.iconat-slider button{
+    display: flex;
+    width: 80px;
+    height: 40px;
     text-align: center;
-    align-self: center;
-    filter: grayscale(100%); 
-}
-nav img:hover{
-   
-    transform: translate(0px, -3px);
-    transition: 0.5s;
-    filter: none;
+    align-items: center;
+    justify-content: center;
+
 }
