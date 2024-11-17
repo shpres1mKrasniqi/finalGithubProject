@@ -1,0 +1,152 @@
+.h1{
+    color: green;
+    
+    border-radius: 15px;
+    
+    }
+    .p1{
+        color: green;
+        
+    }
+    .dashboard{
+        width: 250px;
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .dashboard h2{
+        text-align: center;
+    }
+    .dashboard label{
+        padding: 10px;
+        background-color: #444;
+        color: #fff;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 5px;
+    }
+    .dashboard label:hover{
+        background-color: #555;
+    }
+    input[type="radio"]{
+        display: none;
+    }
+    .category{
+        display: none;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    
+    }
+    body{
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+    
+    
+    }
+    a{
+        text-decoration: none;
+    }
+    li{
+        list-style: none;
+    
+    }
+    h1,h2{
+        color: #200e0e;/*cars*/
+    }
+    .side-menu{
+        position: fixed;
+        background: rgb(194, 5, 5);
+        width: 20vw;
+        min-height: 100vh;
+        display: flex;
+        flex-direction:column ;
+        z-index: 1;
+    }
+    .side-menu .cars-name{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .side-menu li{
+        font-size: 24px;
+        padding: 10px;
+        color: white;
+        display: flex;
+        align-items: center;
+    }
+    .side-menu li:hover{
+        background: white;
+        color: rgb(27, 12, 12);
+    
+    
+    }
+    .container{
+        position: absolute;
+        right: 0;
+        flex-direction: row;
+        justify-content: flex-start;
+        width: 100%;
+        height: 100vh;
+        overflow: auto;
+        flex-grow: 1; 
+        padding: 20px;
+        overflow: auto;
+        
+       
+    }.container .header{
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80vw;
+        height: 10vh;
+        background:white;
+        display: flex;
+        align-items: center;
+        justify-content:center ;
+        box-shadow: 0  4px 0 rgba(241, 10, 10, 0.2);
+    }
+    .container .header .nav{
+        width: 90%;
+        display: flex;
+        align-items: center;
+    }
+    .center{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    .first-car, .first-carL, .first-carE, .first-carF, .first-carO{
+        width: 800px;
+        padding: 10px;
+        border-radius: 20px;
+        border-width: 2px;
+        border-style: solid;
+        border-color:blue;
+        text-align: center;
+        overflow: hidden;
+    }
+    .first-car img, .first-carL img, .first-carE img, .first-carF img, .first-carO img{
+        width: 100%;
+        height: auto;
+        border-radius: 30px;
+        object-fit: cover;
+        object-position: top;
+    }
+    .description, .descriptionL, .descriptionE1, .descriptionF1, .descriptionO1{
+        width: 100%;
+        background-color: rgba(255,255,255,0.8);
+        padding: 15px;
+        margin-top: 5px;
+        border-radius: 0 0 20px 20px;
+    }
+    
