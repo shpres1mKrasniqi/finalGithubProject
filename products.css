@@ -85,8 +85,6 @@ li{
 
 }
 
-
-
 button{
     text-align: center;
     font-size: 20px;
@@ -114,9 +112,6 @@ button:hover{
         width: 45%;
 
     }
-    .iconat-slider{
-        width: 45%;
-    }
 }
 
 @media (max-width:750px){
@@ -125,41 +120,73 @@ button:hover{
         
     }
 
-    .iconat-slider{
-        width: 100%;
-    }
 }
 
-/*Pjesa e ikonave*/
-
-.iconat-slider{
-    position: relative;
-    width: 100%;
-    margin: auto;
-    overflow: hidden;
-    padding: 20px;
-    position: sticky;
-    top: 100px;
-}
-
-.iconat-slider img{
-    margin-top: 10%;
-    height: 5%;
-    width: 5%;
-    display: none;
-  
-}
-
-img.shfaqSlidet{
-    display: block;
-}
-
-.iconat-slider button{
+nav {
+    padding: 10px 30px;
     display: flex;
-    width: 80px;
-    height: 40px;
-    text-align: center;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    background: #0404bc;
+    color: white;
+    position: relative;
+    height: 70px;
+    
+}
+
+nav ul {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+nav ul li {
+    list-style-type: none;
 
 }
+
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+.menuIcon{
+    display: none;
+}
+.menuIcon i{
+    font-size: 30px;
+}
+
+@media(max-width:600px){
+    nav ul{
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        text-align: center;
+        background: #02027c;
+        overflow: hidden;
+    }
+    nav ul li{
+        padding: 10px;
+
+    }
+    
+    .menuIcon{
+        display: block;
+        cursor: pointer;
+    }
+    nav ul li:hover{
+        background: #020255;
+        width: 100%;
+       
+    }
+    
+}
+
+#listaemenus{
+    transition: all 0.5s;
+}
+
+

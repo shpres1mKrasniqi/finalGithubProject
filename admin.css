@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #DFF2FF;
+}
+header h1{
+    font-size: 27px;
+    color: navy;
+
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+ .results{
+     width: 20%;
+    margin: 15px;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    padding-top: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    transition: .4s;
+    background: #ffffff;
+    height: auto;
+    background-color: navy;
+    color: whitesmoke;
+
+    
+}
+
+.results:hover {
+    transform: translate(0, -2px);
+}
+
+ .results p{
+    padding: 60px;
+
+}
+
+.fitimi{
+    width: 28%;
+    position: relative;
+    height: 30%;
+    left: 10%;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0,0,0, 0.6);
+    border: none;
+    float: left;
+    text-align: center;
+}
+
+.fitimi p{
+    padding: 60px;
+}
+
+@media(max-width:1000px){
+    .results{
+        width: 42%;
+    }
+
+
+}
+
+@media(max-width: 750px){
+    .results{
+        width: 100%;
+    }
+}
+
+nav ul{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: fixed;
+
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    text-align: center;
+}
+
+
+
