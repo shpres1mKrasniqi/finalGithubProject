@@ -5,40 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header>
-        <h1>Dashboard</h1>
-
         <nav>
-            <ul>
-                <li><a href="Home.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="Details.html">Details</Details></a></li>
-                <li><a href="contactUs.html">ContactUS</a></li>
-            </ul>
-        </nav>
-
-</script>
-<script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
+            <div class="logo">
+             <h1>SRF AutoCenter</h1>
+            </div>
+             <ul id="listaemenus">
+                 <li><a href="aboutUs.html">About Us</a></li>
+                 <li><a href="Home.html">Home</a></li>
+                 <li><a href="contactus.html">Contact Us</a></li>
+             </ul>
+             <div class="menuIcon">
+    
+                 <i class="fa-solid fa-bars" onclick="menu()"></i>
+             </div>
+         </nav>
+    <script>
+     
+     let listaemenus = document.getElementById("listaemenus")
+     listaemenus.style.maxHeight="0px";
+    
+     function menu(){
+         if(listaemenus.style.maxHeight=="0px"){
+             listaemenus.style.maxHeight="300px";
+         }
+         else{
+             listaemenus.style.maxHeight="0px";
+         }
+     }
+    </script>
+    <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
     </header>
 
     <main>
-        <div class="container">
-            <div class="results">
-                <div class="shitjet">
-                    <p>Total Sales</p>
-                    <h3>$100.000</h3>
-                </div>
-            </div>
-            <div class="results">
-                <p>Net profit</p>
-                <h3>$140.000</h3>
+        <div class="contenjeri">
+            <div class="permbajtja">
+                <img src="fotot/stats.png" alt="statistikat">
+                <h3>Profit from sales</h3>
+                <p>Total</p>
+                <h6>$190.000</h6>   
+        
             </div>
 
-            <div class="results">
-                <p>New Users</p>
-                <h3>100</h3>
+            <div class="permbajtja">
+                <img src="fotot/userat.png" alt="statistikat per userat e ri">
+                <h3>New Users</h3>
+                <p>Total</p>
+                <h6>19</h6>   
+        
+            </div>
+
+            <div class="permbajtja">
+                <img src="fotot/animatedCars.png" alt="statistikat per makina">
+                <h3>Cars sold</h3>
+                <p>Total</p>
+                <h6>10</h6>   
+        
+            </div>
+
+            <div class="permbajtja">
+                <img src="fotot/dollar.png" alt="money">
+                <h3>Cars over 2 Million $</h3>
+                <p>Total</p>
+                <h6>...</h6>   
+        
             </div>
         </div>
     </main>
