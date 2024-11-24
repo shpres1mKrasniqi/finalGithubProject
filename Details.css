@@ -125,12 +125,39 @@
         display: flex;
         align-items: center;
         justify-content:center ;
-        box-shadow: 0  4px 0 rgba(241, 10, 10, 0.2);
+        box-shadow:none;
     }
     .container .header .nav{
         width: 90%;
         display: flex;
         align-items: center;
+    }
+    .car-container {
+        border: 2px solid blue;
+        padding: 20px;
+        width: 500px;
+        font-family: Arial, sans-serif;
+        margin: 20px auto; /* Për të qendruar të gjithë bllokun në qendër të faqes */
+        text-align: center; /* Vendos tekstet dhe butonin në qendër horizontalisht */
+    }
+    .buy-button {
+        padding: 10px 20px;
+        background-color: blue;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-top: 10px; 
+        display: block; 
+        justify-content: center;
+        margin-top: 10px;
+        display: inline-block;
+    }
+    
+    
+    .buy-button:hover {
+        background-color: darkblue;
     }
     .center{
         display: block;
