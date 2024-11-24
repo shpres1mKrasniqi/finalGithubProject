@@ -1,33 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body{
-    margin: 0;
-    font-family: sans-serif;
-    background: aliceblue;
-
+    background-color: #DFF2FF;
+}
+header h1{
+    font-size: 27px;
+    color: rgb(255, 255, 255);
 
 }
-
-h3{
-    text-align: center;
-    font-size: 25px;
-    margin: 0;
-    padding-top: 10px;
-
-}
-
-a{
-    text-decoration: none;
-
-}
-
-.produktet{
+.contenjeri{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
     align-items: center;
     margin: 50px 0;
-
+    height: 100vh;
 }
 
 .permbajtja{
@@ -112,8 +104,6 @@ button:hover{
         width: 45%;
 
     }
-
-  
 }
 
 @media (max-width:750px){
@@ -121,7 +111,6 @@ button:hover{
         width: 100%;
         
     }
-    
 
 }
 
@@ -186,146 +175,12 @@ nav ul li a{
        
     }
 
-
+    .logo h1{
+        font-size: 20px;
+    }
     
 }
 
-
-
 #listaemenus{
     transition: all 0.5s;
-}
-
-/*rregullimi i pjeses per futerin*/
-
-footer{
-    background-color: #020255;
-    position: relative;
-    min-height: 350px;
-    padding: 3rem 1rem;
-
-}
-
-.container{
-    max-width: 1140px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.row
-{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-}
-
-.col{
-    min-width: 250px;
-    color: #ffffff;
-    font-family: popins;
-    padding: 0 2rem;
-}
-
-.col .logoCompanis
-{
-width: 100px;
-margin-bottom: 25px;
-
-
-}
-
-.col h3{
-    color: #00ff04;
-    margin-bottom: 20px;
-    position: relative;
-    cursor: pointer;
-
-}
-
-.col h3::after{
- content: '';
-    height: 3px;
-    width: 50px;
-    background-color: #00ff04;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transition: 0.3s ease;
-
-}
-
-.col h3 :hover::after{
-    width: 30px;
-
-}
-
-.col .socialnet a i {
-    color: aliceblue;
-    margin-top: 2rem;
-    margin-right: 5px;
-    transition: 0.3s ease;
-}
-
-.col .socialnet a i :hover{
-    transform: scale(1.5);
-    filter: grayscale(25);
-
-}
-
-.col .link a{
-    display: block;
-    text-decoration: none;
-    color: #ffffff;
-    margin-bottom: 5px;
-    position: relative;
-    transition: 0.3s ease;
-}
-
-.col .link a::before{
-    content: '';
-    height: 16px;
-    width: 3px;
-    position: absolute;
-    top: 5px;
-    left: -10px;
-    background-color: #00ff04;
-    transition: 0.3s ease;
-    opacity: 0;
-}
-.col .link a:hover ::before{
-opacity: 1;
-
-}
-
-.col .link a:hover{
-    transform: translateX(-5px);
-    color: #00ff04;
-
-}
-
-@media(max-width:900px){
-    .row{
-        flex-direction: column;
-    }
-    .col{
-        width: 100%;
-        text-align: left;
-        margin-bottom: 25px;
-
-    }
-}
-@media(max-width:768px){
-    .row{
-        flex-direction: column;
-    }
-    .col{
-        width: 100%;
-        text-align: left;
-        margin-bottom: 20px;
-        
-    }
 }

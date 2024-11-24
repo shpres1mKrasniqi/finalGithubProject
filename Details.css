@@ -59,7 +59,7 @@
     
     }
     h1,h2{
-        color: #131212; /*cars*/
+        color: #131212; /*makinat*/
     }
     .side-menu{
         position: fixed;
@@ -189,4 +189,5 @@
         margin-top: 5px;
         border-radius: 0 0 20px 20px;
     }
+    
     

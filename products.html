@@ -6,35 +6,41 @@
     <title>Products</title>
     <link rel="stylesheet" href="products.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
   
 <header>
 
-    <div class="iconat-slider">
+    <nav>
+        <div class="logo">
+         <h1>SRF AutoCenter</h1>
+        </div>
+         <ul id="listaemenus">
+             <li><a href="aboutUs.html">About Us</a></li>
+             <li><a href="Home.html">Home</a></li>
+             <li><a href="contactus.html">Contact Us</a></li>
+         </ul>
+         <div class="menuIcon">
 
-            <div class="slidat">
+             <i class="fa-solid fa-bars" onclick="menu()"></i>
+         </div>
+     </nav>
+<script>
+ 
+ let listaemenus = document.getElementById("listaemenus")
+ listaemenus.style.maxHeight="0px";
 
-            
-   
-        <a href="#audi"><img src="/fotot/audiLogo.png" alt="audi logo" class="car"></a>
-        <a href="#bmw"><img src="/fotot/logoBMW.png" alt="bmw logo" class="car"></a>
-       <a href="#lambo"><img src="/fotot/llamboLogo.png" alt="llambo logo" class="car"></a>
-        <a href="#mercedes"><img src="/fotot/mercedesLogo.png" alt="mercedes Logo" class="car"></a>
-        <a href="#porsche"><img src="/fotot/porscheLogo.png" alt="porsche" class="car"></a>
-        <a href="#buggatti"><img src="/fotot/buggattiLogo.png" alt="" class="car"></a>
-        <a href="#tesla"><img src="/fotot/teslaLogo.png" alt="" class="car"></a>
-        <a href="3rangeRover"><img src="/fotot/rangeRoverLogo.png" alt="" class="car"></a>
-        <a href="#mclaren"><img src="/fotot/mcLarenLogo.png" alt="" class="car"></a>
-        <a href="#maserati"><img src="/fotot/masseratiLogo.png" alt="" class="car"></a>
-        <a href="#koenigsegg"><img src="/fotot/koenigseggLogo.png" alt="" class="car"></a>
-        <a href="#ferrari"><img src="/fotot/ferrariLogo.png" alt="" class="car"></a>
-    </div>
-    <button class="paraprak" onclick="paraprak()">&#10094</button>
-    <button class="iardhshem" onclick="tjetri()">&#10095</button>
-    </div>
-
-    <script src="rregullimi.js"></script>
+ function menu(){
+     if(listaemenus.style.maxHeight=="0px"){
+         listaemenus.style.maxHeight="300px";
+     }
+     else{
+         listaemenus.style.maxHeight="0px";
+     }
+ }
+</script>
+<script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
 </header>
 
 <main>
@@ -474,7 +480,42 @@
 </main>
 
 <footer>
-
+  <div class="container">
+    <div class="row">
+        <div class="col" id="rrethCompanis">
+            <img src="fotot/logoeKompanise.png" alt="logojaeKompanise" class="logoCompanis">
+            <p>SRF Autocenter, the largest car dealership in Kosovo and the Balkans.
+                Founded by Shpresim Krasniqi (Founder), led by Rinor Halitaj(CEO), 
+                and supported by Florent Brahaj(COO-Chief Operating Officer).
+            </p>
+            <div class="socialnet">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-snapchat"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="col" id="sherbimet">
+            <h3>Services</h3>
+            <div class="link">
+            <a href="#">Online Sales</a>
+            <a href="#">Car leasing</a>
+            <a href="#">Trade-In</a>
+            <a href="#">Vehicle Maintenance</a>
+        </div>
+    </div>
+        <div class="col" id="linqet">
+            <h3>Links</h3>
+            <div class="link">
+                <a href="aboutUs.html">About Us</a>
+                <a href="Home.html">Home</a>
+                <a href="Details.html">Details</a>
+                
+            </div>
+        </div>
+    </div>
+  </div>
 </footer>
 </body>
 </html>
