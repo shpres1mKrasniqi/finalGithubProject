@@ -59,7 +59,7 @@
     
     }
     h1,h2{
-        color: #131212; /*makinat*/
+        color: #131212;
     }
     .side-menu{
         position: fixed;
@@ -137,8 +137,8 @@
         padding: 20px;
         width: 500px;
         font-family: Arial, sans-serif;
-        margin: 20px auto; /* Për të qendruar të gjithë bllokun në qendër të faqes */
-        text-align: center; /* Vendos tekstet dhe butonin në qendër horizontalisht */
+        margin: 20px auto; 
+        text-align: center; 
     }
     .buy-button {
         padding: 10px 20px;
