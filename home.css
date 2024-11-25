@@ -12,8 +12,8 @@ body, html {
     justify-content: space-between;
     align-items: center;
     gap: 5px;
-    background-color: navy;
-    padding: 15px 0;
+    background-color: rgb(9, 9, 182);
+    padding: 25px 0;
     position: fixed;
     top: 0;
     width: 100%;
@@ -22,11 +22,11 @@ body, html {
 .navbar .h1 h1 {
     color: white;
     margin: 0;
-    font-size: 1.8em;
+    font-size: 1.7em;
 }
 .links {
     display: flex;
-    gap: 15px;
+    gap: 2px;
 }
 
 .navbar a {
@@ -35,11 +35,11 @@ body, html {
     font-size: 1.2em;
     padding: 10px 20px;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: 0.3s;
 }
 
 .navbar a:hover {
-    background-color: rgb(7, 94, 176)
+    background-color:rgba(35, 20, 248, 0.587);
 }
 .h1{
     display: flex;
@@ -47,6 +47,7 @@ body, html {
     font-size: x-small;
     margin: 0;
     color: white;
+    margin-left: 25px;
 }
 
   
@@ -70,7 +71,7 @@ body, html {
 .footer {
     text-align: center;
     padding: 10px;
-    background-color: navy;
+    background-color: rgb(9, 9, 182);
     color: white;
     position: fixed;
     bottom: 0;
