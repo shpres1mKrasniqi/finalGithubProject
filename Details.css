@@ -64,18 +64,23 @@
     .side-menu{
         position: fixed;
         background: navy;
-        width: 20vw;
+        width: 20%;
         min-height: 100vh;
         display: flex;
         flex-direction:column ;
         z-index: 1;
+        overflow: hidden;
+        flex-wrap: wrap;
 
     }
 
     .side-menu ul li a{
+        font-size: 25px;
         text-decoration: none;
         list-style: none;
         color: #fff;
+        text-align: center;
+        overflow: hidden;
     }
     
     .side-menu .cars-name{
@@ -107,7 +112,7 @@
         right: 0;
         flex-direction: row;
         justify-content: flex-start;
-        width: 100%;
+        width: 80%;
         height: 100vh;
         overflow: auto;
         flex-grow: 1; 
@@ -135,7 +140,7 @@
     .car-container {
         border: 2px solid blue;
         padding: 20px;
-        width: 500px;
+        width: 50%;
         font-family: Arial, sans-serif;
         margin: 20px auto; 
         text-align: center; 
@@ -166,6 +171,10 @@
         width: 50%;
     }
     .first-car, .first-carL, .first-carE, .first-carF, .first-carO{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         width: 800px;
         padding: 10px;
         border-radius: 20px;
@@ -174,6 +183,7 @@
         border-color:blue;
         text-align: center;
         overflow: hidden;
+        margin: 20px auto;
     }
     .first-car img, .first-carL img, .first-carE img, .first-carF img, .first-carO img{
         width: 100%;
@@ -181,13 +191,56 @@
         border-radius: 30px;
         object-fit: cover;
         object-position: top;
+        max-width: 100%;
     }
     .description, .descriptionL, .descriptionE1, .descriptionF1, .descriptionO1{
-        width: 100%;
+        width: 90%;
         background-color: rgba(255,255,255,0.8);
         padding: 15px;
-        margin-top: 5px;
+        margin-top: 10px;
         border-radius: 0 0 20px 20px;
+        text-align: center;
     }
     
+    @media (max-width: 768px) {
+        .side-menu {
+            width: 30%; 
+        }
+        .first-car, .first-carL, .first-carE, .first-carF, .first-carO {
+            width: 90%; 
+        }
+        .description{
+            font-size: 14px;
+        }
+        .side-menu li {
+            font-size: 16px; 
+        }
+        .container {
+            padding: 10px;
+        }
+    }
     
+   
+    @media (max-width: 1024px) {
+        .side-menu {
+            width: 30%;
+        }
+        .container .header {
+            width: 70%;
+        }
+        .first-car, .first-carL, .first-carE, .first-carF, .first-carO {
+            width: 90%;
+        }
+    }
+    @media (max-width: 600px) {
+        h1, h2 {
+            font-size: 18px;
+        }
+        .dashboard label {
+            font-size: 14px;
+            padding: 8px;
+        }
+        .buy-button {
+            font-size: 14px;
+        }
+    }
