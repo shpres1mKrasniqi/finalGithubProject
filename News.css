@@ -12,6 +12,9 @@ header{
     color: #fff;
     font-size: 25px;
 }
+header , h2{
+    text-align: center;
+}
 .cars-foto{
     display: flex;
     flex-wrap: wrap;
