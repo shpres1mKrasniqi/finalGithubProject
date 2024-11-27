@@ -2,7 +2,7 @@
 body{
     margin: 0;
     font-family: sans-serif;
-    background: aliceblue;
+    background: rgb(184, 222, 255);
 
 
 }
@@ -61,7 +61,7 @@ img{
 
 p{
     text-align: center;
-    color: gray;
+    color: rgb(102, 98, 98);
     padding-top: 0 8px;
 
 }
