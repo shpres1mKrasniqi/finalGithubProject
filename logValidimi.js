@@ -9,9 +9,10 @@ function menu() {
     }
 }
 
-const form = document.getElementById('adminform');
-const imejli = document.getElementById('imejliAdminit');
-const fjalekalimi = document.getElementById('pasiiAdminit');
+
+const form = document.getElementById('form');
+const imejli = document.getElementById('imejliUser');
+const fjalekalimi = document.getElementById('pasiiUser');
 
 form.addEventListener('submit', function (e) {
     let mesazheGabimi = [];
@@ -34,11 +35,11 @@ form.addEventListener('submit', function (e) {
         fjalekalimi.setAttribute('placeholder', 'Passwordi duhet plotesuar!');
 
     }
-    else if(fjalekalimi.value.length<8){
+    else if(fjalekalimi.value.length<6){
         mesazheGabimi.push('Password eshte dhene gabim!');
         fjalekalimi.style.borderColor = 'red';
         fjalekalimi.classList.add('error');
-        fjalekalimi.setAttribute('placeholder', 'Password, min 8 karaktere!');
+        fjalekalimi.setAttribute('placeholder', 'Password, min 6 karaktere!');
     }
 
 
@@ -49,6 +50,3 @@ form.addEventListener('submit', function (e) {
 
 
 });
-
-
-

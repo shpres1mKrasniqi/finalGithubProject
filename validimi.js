@@ -87,37 +87,4 @@ formaSignup.addEventListener('submit' , (e) =>{
 });
 
 
-formaLogin.addEventListener('submit', (a)=>{
-    let gabimet = [];
 
-
-
-    if (useriNormalEmail.value.trim() === '') {
-        gabimet.push('Emaili eshte eshte dhene gabim!');
-        useriNormalEmail.style.borderColor = 'red';
-        useriNormalEmail.classList.add('error');
-        useriNormalEmail.setAttribute('placeholder', 'Emaili duhet plotesuar!');
-
-    }
-
-
-    if (pasiUserit.value.trim() === '') {
-        gabimet.push('Password eshte dhene gabim!');
-        pasiUserit.style.borderColor = 'red';
-        pasiUserit.classList.add('error');
-        pasiUserit.setAttribute('placeholder', 'Passwordi duhet plotesuar!');
-
-    }
-    else if(pasiUserit.value.length<6){
-        gabimet.push('Password eshte dhene gabim!');
-        pasiUserit.style.borderColor = 'red';
-        pasiUserit.classList.add('error');
-        pasiUserit.setAttribute('placeholder', 'Password, min 6 karaktere!');
-    }
-
-
-    if (gabimet.length > 0) {
-        a.preventDefault(); 
-       
-    }
-});
