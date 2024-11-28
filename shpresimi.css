@@ -158,6 +158,13 @@ nav ul li a{
     border-radius: 20px;
 
 }
+
+.signupContainer.success input {
+    border-color: greenyellow;
+}
+.signupContainer.error input{
+    border-color: red;
+}
 .signupContainer h2{
     margin-top: 10px;
     color: navy;
@@ -254,4 +261,13 @@ nav ul li a{
         font-size: 20px;
     }
 }
+/* Kjo klas osht per pjesen e validimit nese kem error e qet met kuqe*/
 
+input.error::placeholder{
+    color: red;
+
+}
+
+input.error{
+    border:1px solid red;
+}

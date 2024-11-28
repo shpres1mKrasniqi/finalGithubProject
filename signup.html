@@ -6,10 +6,11 @@
     <title>Signup</title>
     <link rel="stylesheet" href="shpresimi.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+   
 </head>
 <body>
 <header>
-
 
     <nav>
         <div class="logo">
@@ -25,44 +26,38 @@
              <i class="fa-solid fa-bars" onclick="menu()"></i>
          </div>
      </nav>
-<script>
- 
- let listaemenus = document.getElementById("listaemenus")
- listaemenus.style.maxHeight="0px";
 
- function menu(){
-     if(listaemenus.style.maxHeight=="0px"){
-         listaemenus.style.maxHeight="300px";
-     }
-     else{
-         listaemenus.style.maxHeight="0px";
-     }
- }
- </script>
  <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
 </header>
  <main>
+
     <div class="signupContainer">
-        <form action="post">
+
+        <form action="#" id="signupforma" class="formaSignup">
            
                 <div class="h2">
                     <h2>Signup</h2>
                 </div>
-                <div class="emmri">
-                    <input type="text" placeholder="Type Your First Name" required id="emri" name="nejmi">
+                <div class="emri">
+                    <input type="text" placeholder=" First Name"  id="emri" name="nejmi" >
+                   
                 </div>
         
-                <div class="mbiiemri">
-                    <input type="text" placeholder="Type Your Last Name"required id="mbiemri" name="surnamei">
+                <div class="mbiemri">
+                    <input type="text" placeholder=" Last Name"  id="mbiemri" name="surnamei" >
+                
                 </div>
-                <div class="emii">
-                    <input type="email" placeholder="Type Your Email"required id="imejli" name="emaili">
+                <div class="emajli">
+                    <input type="email" placeholder="Email"  id="imejli" name="emaili" >
+                
                 </div>
-                <div class="ppsi">
-                    <input type="password" placeholder="Type Your Email"required id="fjalekalimi" name="pasi">
+                <div class="pasi">
+                    <input type="password" placeholder=" Password" id="fjalekalimi" name="pasi" >
+                    
                 </div>
-                <div class="konfirmopas">
-                    <input type="password" placeholder="Confirm Your Email"required id="fjalekalimi2" name="pasi2">
+                <div class="pasidyt">
+                    <input type="password" placeholder="Confirm Password" id="fjalekalimi2" name="pasi2" >
+                   
                 </div>
                 <div class="skeAcc">
                     <p>Don't have an account? <a href="login.html">Login</a></p>
@@ -71,5 +66,8 @@
             </form>
             </div>
  </main>
+
+ <script defer src="validimi.js"></script>
+ 
 </body>
 </html>
