@@ -51,8 +51,8 @@ a{
 }
 
 img{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     text-align: center;
     margin: 0 auto;
     display: block;
@@ -307,6 +307,81 @@ opacity: 1;
 
 }
 
+/* rregullimi i slider*/
+.containeri {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 20px; 
+    padding: 20px 0; 
+    background-color: #f9f9f9; 
+}
+
+.slider {
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+}
+
+.slider .image {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 10px; 
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.slider .image .foto {
+    width: 200px; 
+    height: 250px; 
+    object-fit: cover;
+    border-radius: 8px;  
+}
+
+.slider .slide-button{
+    position: absolute;
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    color: #fff;
+    border: none;
+    outline: none;
+    background: navy;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.slider .slide-button:hover{
+    background: black;
+}
+
+.slider .slide-button#prev-slide{
+left: -20px;
+display: none;
+
+}
+
+.slider .slide-button#next-slide{
+    right: -20px;
+
+}
+
+
+@media (max-width: 1023px) {
+    .slider .image .foto {
+        width: 150px; 
+        height: 190px; 
+    }
+
+    .containeri{
+        margin-top: 110px; 
+    }
+}
+
+
+
 @media(max-width:900px){
     .row{
         flex-direction: column;
@@ -316,6 +391,10 @@ opacity: 1;
         text-align: left;
         margin-bottom: 25px;
 
+    }
+    .slider .image .foto {
+        width: 135px; 
+        height: 150px; 
     }
 }
 @media(max-width:768px){
@@ -329,3 +408,4 @@ opacity: 1;
         
     }
 }
+
