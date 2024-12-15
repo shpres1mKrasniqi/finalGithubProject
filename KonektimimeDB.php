@@ -1,37 +1,35 @@
 <?php
 class KonektimimeDB {
 
-    private $server;
-    private $username;
-    private $password;
-    private $dbname;
+  private $conn =null;
+  private $host = 'localhost';
+  private $dbname = 'srf_autocenter';
+  private $username = 'root';
+  private $password = '';
+  
+  public function connectDB(){
+  
+  try {
+  $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbname",
+  $this->username, $this->password);
+  $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION) . "<br/>";
+  $this->conn->setAttribute(PDO::FETCH_BOUND, PDO::FETCH_BOTH);
+   $this->conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC) . "<br/>";
+  
+   echo "Lidhja me: {$this->dbname} - {$this->host}: eshte ralizuar me sukses!";
+  } catch (PDOException $pdoe) {
+  die("Nuk mund të lidhej me bazën e të dhënave {$this->dbname} :" . $pdoe->getMessage());
+  }
+  
+  return $this->conn;
+  }
+  }
 
-    
-    public function lidhja() {
-        
-        $this->server = "localhost";
-        $this->username = "root";
-        $this->password = "";
-        $this->dbname = "srf_autocenter";
+  $conn = new KonektimimeDB();
+  $conn = $conn->connectDB();
 
-        
-        $conn = new mysqli($this->server, $this->username, $this->password, $this->dbname);
+    ?>
 
-        
-        if ($conn->connect_error) {
-            die("Lidhja me databazën dështoi: " . $conn->connect_error);
-        }
-
-        
-        echo "Lidhja me databazën u realizua me sukses!<br>";
-
-        return $conn;
-    }
-}
+  
 
 
-
-
-$lidhja = new KonektimimeDB(); 
-$conn = $lidhja->lidhja(); 
-?>
