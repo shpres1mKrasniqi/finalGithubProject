@@ -1,3 +1,22 @@
+<?php
+
+    require_once('regjistri.php');
+
+    if(isset($_POST['save'])){
+        $regj = new SignupForma();
+        $regj ->setEmri($_POST['emri']);
+        $regj->setMbiemri($_POST['mbiemri']);
+        $regj->setEmaili($_POST['emaili']);
+        $regj->setPaswordi($_POST['paswordi']);
+        $regj->setConfirmPaswordi($_POST['confirmPaswordi']);
+
+        $regj-> regjistrimi();
+    }
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,12 +58,12 @@
                     <h2>Signup</h2>
                 </div>
                 <div class="emri">
-                    <input type="text" placeholder=" First Name"  id="emri" name="nejmi" >
+                    <input type="text" placeholder=" First Name"  id="emri" name="emri" >
                    
                 </div>
         
                 <div class="mbiemri">
-                    <input type="text" placeholder=" Last Name"  id="mbiemri" name="surnamei" >
+                    <input type="text" placeholder=" Last Name"  id="mbiemri" name="mbiemri" >
                 
                 </div>
                 <div class="emajli">
@@ -52,17 +71,17 @@
                 
                 </div>
                 <div class="pasi">
-                    <input type="password" placeholder=" Password" id="fjalekalimi" name="pasi" >
+                    <input type="password" placeholder=" Password" id="fjalekalimi" name="paswordi" >
                     
                 </div>
                 <div class="pasidyt">
-                    <input type="password" placeholder="Confirm Password" id="fjalekalimi2" name="pasi2" >
+                    <input type="password" placeholder="Confirm Password" id="fjalekalimi2" name="confirmPaswordi" >
                    
                 </div>
                 <div class="skeAcc">
                     <p>Don't have an account? <a href="login.html">Login</a></p>
                 </div>
-                    <button type="submit" class="btnSignup">Signup</button>
+                    <button type="submit" class="btnSignup" name="save">Signup</button>
             </form>
             </div>
  </main>
