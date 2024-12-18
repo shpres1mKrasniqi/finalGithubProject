@@ -122,8 +122,48 @@ class SignupForma extends KonektimimeDB{
         }
     }
     
+//metoda me lexu perdorusit nga DB: 
 
+public function lexoTeDhenat(){
+    $sql = "select * from perdoruesit";
+    
+    $stm= $this->dbconn->prepare($sql);
+
+    $stm->execute();
+
+    $rezultati = $stm->fetchAll(PDO::FETCH_ASSOC);
+    return $rezultati;
+    
+}
+
+
+//Metoda delete per userate  autosallonit
+
+public function fshijUserat($id){
+    $sql = "DELETE FROM perdoruesit where id=:id";
+
+    $stm = $this->dbconn->prepare($sql);
+    $stm->bindParam(':id', $id);
+    $stm->execute();
+
+    if($stm==true){
+
+        echo"<script>
+        alert('Te dhenat jane Fshire me Sukses!');
+        document.location='leximiUserave.php';
+        </script>";
+
+    }
+    else{
+        echo"<script>
+        alert('Te dhenat nuk jane Fshire. GABIM!');
+        document.location='leximiUserave.php';
+        </script>";
+    }
+}
 
 }
+
+
 
 ?>
