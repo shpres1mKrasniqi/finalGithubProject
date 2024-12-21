@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f9fc;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#formulari {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+h3 {
+    text-align: center;
+    color: #004aad;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+label {
+    font-weight: bold;
+    color: #004aad;
+    width: 80%;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 80%;
+    text-align: center;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 80%;
+}
+
+button[name="edit"] {
+    background-color: #004aad;
+    color: #ffffff;
+}
+
+button[name="edit"]:hover {
+    background-color: #00338d;
+}
+
+#back {
+    background-color: #d9534f;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#back:hover {
+    background-color: #c9302c;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+@media (max-width: 480px) {
+    #formulari {
+        padding: 15px;
+    }
+}

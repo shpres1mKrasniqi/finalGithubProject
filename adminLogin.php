@@ -1,3 +1,13 @@
+<?php
+
+    require_once('regjistri.php');
+
+    $tedhenat = new SignupForma();
+
+    $userateRi = $tedhenat->userateRi();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +25,7 @@
             </div>
              <ul id="listaemenus">
                  <li><a href="aboutUs.html">About Us</a></li>
-                 <li><a href="Home.html">Home</a></li>
+                 <li><a href="leximiUserave.php">Users</a></li>
                  <li><a href="contactus.html">Contact Us</a></li>
              </ul>
              <div class="menuIcon">
@@ -42,37 +52,18 @@
 
     <main>
         <div class="contenjeri">
-            <div class="permbajtja">
-                <img src="fotot/stats.png" alt="statistikat">
-                <h3>Profit from sales</h3>
-                <p>Total</p>
-                <h6>$190.000</h6>   
-        
-            </div>
+         
 
             <div class="permbajtja">
                 <img src="fotot/userat.png" alt="statistikat per userat e ri">
                 <h3>New Users</h3>
                 <p>Total</p>
-                <h6>19</h6>   
+                <h6><?php echo $userateRi;?></h6>   
         
             </div>
 
-            <div class="permbajtja">
-                <img src="fotot/animatedCars.png" alt="statistikat per makina">
-                <h3>Cars sold</h3>
-                <p>Total</p>
-                <h6>10</h6>   
-        
-            </div>
-
-            <div class="permbajtja">
-                <img src="fotot/dollar.png" alt="money">
-                <h3>Cars over 2 Million $</h3>
-                <p>Total</p>
-                <h6>...</h6>   
-        
-            </div>
+         
+           
         </div>
     </main>
 

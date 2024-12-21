@@ -178,6 +178,17 @@ public function fshijUserat($id){
     }
 }
 
+
+    //Numerimi i userave te ri ne autosallon
+
+    public function userateRi(){
+        $sql = "SELECT COUNT(*) AS new_users FROM perdoruesit WHERE DATE(created_at) = CURDATE()";
+        $stmt = $this->dbconn->prepare($sql);
+        $stmt->execute();
+
+         $rezultati = $stmt->fetch(PDO::FETCH_ASSOC);
+       return $rezultati['new_users'] ?? 0;
+    }
 }
 
 

@@ -1,3 +1,7 @@
+<?php
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,3 +53,4 @@
 <script src="adminvalid.js"></script>
 </body>
 </html>
+
