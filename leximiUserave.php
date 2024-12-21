@@ -45,9 +45,13 @@
         <a href="delete.php?id=<?php echo $value['id'];?>">
 
         <button id="d">DELETE</button>
+
         </a>
-        <a href="edit.php?id=<?php echo $value['id'];?>">
+
+        <a href="ndryshoUserin.php?id=<?php echo $value['id'];?>">
+
             <button id="edit">EDIT</button>
+
         </a>
         </td>
     </tr>

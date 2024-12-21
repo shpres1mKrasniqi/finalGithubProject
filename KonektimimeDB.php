@@ -18,7 +18,7 @@ class KonektimimeDB {
   
    //echo "Lidhja me: {$this->dbname} - {$this->host}: eshte ralizuar me sukses!";
   } catch (PDOException $pdoe) {
-  die("Nuk u  lidhe me bazën e të dhënave {$this->dbname} :" . $pdoe->getMessage());
+  die("Nuk u  lidhe me Data Bazen:  {$this->dbname} :" . $pdoe->getMessage());
   }
   
   return $this->conn;

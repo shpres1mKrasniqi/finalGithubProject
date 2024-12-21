@@ -98,6 +98,7 @@ class SignupForma extends KonektimimeDB{
         $stmt->execute();
     
         if($stmt->rowCount() > 0){
+            
             echo"<script>
                     alert('Emaili tashme Ekziston, Shkruaj nje tjeter!');
                     document.location='signup.php';
@@ -136,8 +137,23 @@ public function lexoTeDhenat(){
     
 }
 
+//metoda edit i userav
+    public function lexoSipasID($id){
+        $sql = "SELECT * FROM perdoruesit WHERE id=:id";
 
-//Metoda delete per userate  autosallonit
+        $stm = $this->dbconn->prepare($sql);
+        $stm->execute([':id' =>$id]);
+        $rezultati = $stm->fetch(PDO::FETCH_ASSOC);
+        return $rezultati;   
+    }
+
+    public function updateUserat($id){
+        $sql = "UPDATE perdoruesit SET emri= ?, mbiemri= ?, emaili = ?, paswordi = ? where id = ?";
+        $stm = $this->dbconn->prepare($sql);
+        $stm->execute([$this->emri, $this->mbiemri, $this->emaili, $this->paswordi, $id]);
+    }
+
+//Metoda delete per userate e autosallonit
 
 public function fshijUserat($id){
     $sql = "DELETE FROM perdoruesit where id=:id";
