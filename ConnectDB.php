@@ -2,7 +2,7 @@
 class ConnectDB {
     private $conn = null;
     private $host = 'localhost';
-    private $dbname = 'Veturat';
+    private $dbname = 'srf_autocenter';
     private $username = 'root';
     private $password = '';
 
