@@ -76,22 +76,22 @@ class SignupForma extends KonektimimeDB{
 
     public function regjistrimi() {
         if (empty($this->emri) || empty($this->mbiemri) || empty($this->emaili) || empty($this->paswordi) || empty($this->confirmPaswordi)) {
-            return "Të gjitha fushat janë të detyrueshme!";
+            return "Te gjitha fushat jan te detyrueshme!";
         }
     
 
         if (!filter_var($this->emaili, FILTER_VALIDATE_EMAIL)) {
-            return "Email-i juaj është i pavlefshëm!";
+            return "Email-i juaj eshte GABIM!";
         }
     
         
         if ($this->paswordi !== $this->confirmPaswordi) {
-            return "Fjalëkalimet nuk përputhen!";
+            return "Passwordat nuk perputhen!";
         }
     
        
         if (strlen($this->paswordi) < 6) {
-            return "Fjalëkalimi duhet të ketë së paku 6 karaktere!";
+            return "Passwordi duhet te kete se paku 6 karaktere!";
         }
     
         
@@ -118,9 +118,10 @@ class SignupForma extends KonektimimeDB{
         $stmt->bindParam(':paswordi', $hashedPassword);
     
         if ($stmt->execute()) {
-            return "Regjistrimi u krye me sukses!";
+            header("Location: Home.html");
+           exit();
         } else {
-            return "Diçka shkoi keq gjatë regjistrimit. Ju lutem provoni përsëri.";
+            return "GABIM. Ju lutem provoni perseri.";
         }
     }
     
@@ -205,7 +206,7 @@ public function fshijUserat($id){
         return $rezultati['admin_userat'] ?? 0;
     }
 
-
+    
 }
 
 

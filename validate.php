@@ -1,5 +1,6 @@
 <?php
 include_once('KonektimimeDB.php'); 
+session_start();
 
 class AdminLogin {
     private $conn;
@@ -30,9 +31,16 @@ class AdminLogin {
 
             $stmt->execute(); 
             if ($stmt->rowCount() > 0) {
+                
+                $admin = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+                $_SESSION['admin_id'] = $admin['admin_id'];
               
                 header("Location: adminLogin.php");
                 exit();
+                
+
             } else {
                
                 echo "<script language='javascript'>";
