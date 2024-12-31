@@ -21,7 +21,7 @@ require_once('addProducts.php');
             <h3>Shtimi i Produkteve</h3>
             <form action="" method="POST">
                 <label for="foto">Foto</label>
-                <input type="file" class="inp" name="foto" id="foto" placeholder="Foto e produktit"/>
+                <input type="file" name="foto" id="foto" accept="image/*" required>
 
                 <label for="modeli">Modeli</label>
                 <input type="text" class="inp" name="modeli" id="modeli" placeholder="Modeli"/>

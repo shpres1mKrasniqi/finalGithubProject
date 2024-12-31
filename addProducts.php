@@ -112,9 +112,23 @@ class AddProducts extends KonektimimeDB {
             echo "Error: " . $e->getMessage();
         }
     }
+
+    //metoda per me i shfaqe produktet
+
+    public function shfaqTedhenat(){
+        $sql = "SELECT foto, modeli, pershkrimi, cmimi, shtuar_nga FROM
+        produktet";
+
+        $stm = $this->dbconn->prepare($sql);
+        $stm->execute();
+
+        $rezultati = $stm->fetchAll(PDO::FETCH_ASSOC);
+        return $rezultati;
+    }
 }
 
 if (isset($_POST['save'])) {
+    
     $product = new AddProducts();
     
   
@@ -127,4 +141,5 @@ if (isset($_POST['save'])) {
    
     $product->addProduct();
 }
+
 ?>
