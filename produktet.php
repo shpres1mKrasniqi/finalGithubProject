@@ -60,28 +60,20 @@
     </div>
 </div>
 <main>
-   
-
-<?php 
-
-    foreach($allTeDhenat as $key=>$value){
-
-?>
-  <div class="produktet">
-    <div class="permbajtja">
-        <img src="./fotot/<?php echo $value['foto'];?>">
-        <h3><?php echo $value['modeli'];?></h3>
-        <p><?php echo $value['pershkrimi'];?></p>
-        <h6><?php echo $value['cmimi'];?></h6>
-        <h6>Shtuar nga admin: <?php echo $value['shtuar_nga'];?></h6>   
-        <button class="view-audiA5" onclick="window.location.href='Details.html? '">VIEW DETAILS</button>
+    <div class="produktet">
+        <?php foreach($allTeDhenat as $value): ?>
+            <div class="permbajtja">
+               <img src="./fotot/<?php echo $value['foto']; ?>">
+        <h3><?php echo $value['modeli']; ?></h3>
+        <p><?php echo $value['pershkrimi']; ?></p>
+        <h6><?php echo $value['cmimi']; ?></h6>
+        <p>Shtuar nga admin: <?php echo $value['shtuar_nga']; ?></p>
+        <p>Modifikuar nga admin: </p>   
+        <button class="view-audiA5" onclick="window.location.href='Details.html'">VIEW DETAILS</button>
+            </div>
+        <?php endforeach; ?>
     </div>
-  </div>
-
-  <?php
-    }
-    ?>
-
+</main>
 <footer>
   <div class="container">
     <div class="row">
