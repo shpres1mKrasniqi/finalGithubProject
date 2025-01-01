@@ -19,6 +19,8 @@ $userateRi = $tedhenat->userateRi();
 
 $adminatNumri = $tedhenat->adminatNumri();
 
+$numriProdukteve = $tedhenat->numeroProduktet();
+
 ?>
 
 <!DOCTYPE html>
@@ -86,7 +88,7 @@ $adminatNumri = $tedhenat->adminatNumri();
             <img src="fotot/animatedCars.png" alt="statistikat per userat e ri">
             <h3>Products</h3>
             <p>Total</p>
-            <h6>0</h6>   
+            <h6><?php echo $numriProdukteve;?></h6>   
     
         </div>
 

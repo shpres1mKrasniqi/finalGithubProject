@@ -206,6 +206,20 @@ public function fshijUserat($id){
         return $rezultati['admin_userat'] ?? 0;
     }
 
+
+    //Numerimi i produkteve ne Autosallon: 
+
+
+    public function numeroProduktet(){
+        $sql = "SELECT COUNT(*) as produktet FROM produktet";
+
+        $stm = $this->dbconn->prepare($sql);
+
+        $stm->execute();
+
+        $rez = $stm->fetch(PDO::FETCH_ASSOC);
+        return $rez['produktet']?? 0;
+    }
     
 }
 
