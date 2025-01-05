@@ -32,10 +32,10 @@ require_once('addProducts.php');
                 <label for="cmimi">Cmimi</label>
                 <input type="text" class="inp" name="cmimi" id="cmimi" placeholder="Cmimi" step="0.01" required/>
 
-                <label for="shtuar_nga">Shtuar Nga</label>
-                <input type="text" class="inp" name="shtuar_nga" id="shtuar_nga" placeholder="Shtuar nga" readonly value="<?php echo $_SESSION['admin_id']; ?>"/>
+                <label for="modifikuar_nga">Shtuar Nga</label>
+                <input type="text" class="inp" name="modifikuar_nga" id="modifikuar_nga" placeholder="Modifikuar nga" readonly value="<?php echo $_SESSION['admin_id']; ?>"/>
 
-                <button type="submit" name="save">SAVE</button>
+                <button type="submit" name="update">SAVE</button>
             </form>
         </div>
     </body>

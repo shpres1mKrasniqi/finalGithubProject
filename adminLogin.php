@@ -10,7 +10,7 @@ if (!isset($_SESSION['admin_id'])) {
 
 }
 
-echo "Ju jeni kyqur si admin me ID: , Admin ID: " . $_SESSION['admin_id'];
+echo "Ju jeni kyqur si admin me ID: " . $_SESSION['admin_id'];
 require_once('regjistri.php');
 
 $tedhenat = new SignupForma();

@@ -20,7 +20,7 @@
 <body>
     
 
-<div class="kontinieri" id="kontinieri">
+<div class="kontinieri" id="kontinieri" style="overflow-x:auto;">
 
     <table>
         <p>List of Users</p>

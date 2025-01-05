@@ -32,7 +32,7 @@ th, td {
 }
 
 th {
-    background-color: #0074d9; 
+    background-color: #00223e; 
     color: white;
     text-transform: uppercase;
 }
@@ -69,3 +69,4 @@ td#de a button {
     background-color: #041c31;
     transition: 0.5s;
 }
+
