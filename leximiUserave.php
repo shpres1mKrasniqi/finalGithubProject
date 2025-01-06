@@ -42,7 +42,7 @@
         <td><?php echo $value['emaili'];?></td>
         <td id="de">
 
-        <a href="delete.php?id=<?php echo $value['id'];?>">
+        <a href="delete.php?id=<?php echo $value['id'];?>" onclick="return confirm('A jeni i sigurt qe deshironi te fshini kete produkt?');">
 
         <button id="d">DELETE</button>
 

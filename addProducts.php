@@ -25,6 +25,13 @@ class AddProducts extends KonektimimeDB {
         $this->dbconn = $this->connectDB();  
     }
 
+    public function getID(){
+        return $this->id;
+    }
+
+    public function setID($id){
+        $this->id=$id;
+    }
 
     public function getFoto() {
         return $this->foto;
@@ -116,7 +123,7 @@ class AddProducts extends KonektimimeDB {
     //metoda per me i shfaqe produktet
 
     public function shfaqTedhenat(){
-        $sql = "SELECT foto, modeli, pershkrimi, cmimi, shtuar_nga, modifikuar_nga FROM
+        $sql = "SELECT id, foto, modeli, pershkrimi, cmimi, shtuar_nga, modifikuar_nga FROM
         produktet";
 
         $stm = $this->dbconn->prepare($sql);
@@ -126,52 +133,26 @@ class AddProducts extends KonektimimeDB {
         return $rezultati;
     }
 
-    // metoda per me i modifiku produktet qe i kena shtu ne databaz: 
+    //metoda me fshi Produkte:
 
-        public function ndryshoProduktet($id){
-            $sql =  "SELECT * FROM produktet where id=:id";
-            
-            $stm = $this->dbconn->prepare($sql);
-            $stm->execute([':id' =>$id]);
-            $rezultati = $stm->fetch(PDO::FETCH_ASSOC);
-            return $rezultati;
+    public function delProducts($id){
+
+        $sql=  "DELETE FROM produktet where id=:id";
+
+        $stm = $this->dbconn->prepare($sql);
+        $stm->bindParam(':id',$id);
+        $stm->execute();
+
+        if($stm==true){
+            echo"<script>
+            alert('Produkti eshte Fshire me Sukses!');
+            document.location='adminProducts.php';
+            </script>";
         }
-
-        public function updateProduktet($id){
-
-            try{
-                
-                session_start();
-                if(isset($_SESSION['admin_id'])){
-                    $this->modifikuar_nga = $_SESSION['admin_id'];
-                }
-                else{
-                    echo "Duhet te kyqesh si admin per te perditesu Produktet!";
-                    return;
-                }
-                $sql ="UPDATE produktet 
-                set foto = :foto, modeli = :modeli, pershkrimi = :pershkrimi, cmimi = :cmimi, modifikuar_nga = :modifikuar_nga
-                where id =:id ";
-
-                $stm = $this->dbconn->prepare($sql);
-                $stm->bindParam(':foto', $this->foto);
-                $stm->bindParam(':modeli', $this->modeli);
-                $stm->bindParam(':pershkrimi', $this->pershkrimi);
-                $stm->bindParam(':cmimi', $this->cmimi);
-                $stm->bindParam(':modifikuar_nga', $this->modifikuar_nga);
-                $stm->bindParam(':id', $id);
-                $stm->execute();
-
-                echo "<script>
-                alert('Produktet jan modifikuar me sukses!');
-                document.location='updatojProduktet.php';
-                </script>";
-            }
-            catch(PDOException $pdoe){
-                $pdoe->getMessage();
-            }
-
+        else{
+            return false;
         }
+    }
 }
 
 //shtimi i produkteve:
@@ -191,18 +172,6 @@ if (isset($_POST['save'])) {
     $product->addProduct();
 }
 
-//modifikimi i produkteve: 
-
-if(isset($_POST['update'])){
-
-    $product = new AddProducts();
-    $product->setFoto($_POST['foto']);
-    $product->setModeli($_POST['modeli']);
-    $product->setPershkrimi($_POST['pershkrimi']);
-    $product->setCmimi($_POST['cmimi']);
-    $product->updateProduktet($_POST['id']);
-
-}
 
 
 ?>

@@ -2,6 +2,7 @@
 
 require_once('regjistri.php');
 
+
 $teDhenat = new SignupForma();
 
 if(isset($_GET['id'])){
@@ -13,5 +14,6 @@ if(isset($_GET['id'])){
 else{
     echo"Te dhenat nuk u fshine, ID nuk u dergua!";
 }
+
 
 ?>

@@ -39,9 +39,9 @@ $numriProdukteve = $tedhenat->numeroProduktet();
          <h1>Admin</h1>
         </div>
          <ul id="listaemenus">
-             <li><a href="aboutUs.html">About Us</a></li>
+             <li><a href="News.html">Add News</a></li>
              <li><a href="leximiUserave.php">Users</a></li>
-             <li><a href="contactus.html">Contact Us</a></li>
+             <li><a href="shtoProdukte.php">Add Products</a></li>
          </ul>
          <div class="menuIcon">
 
