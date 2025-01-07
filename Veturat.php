@@ -5,17 +5,6 @@ $veturatDB = new VeturatDB();
 
 $veturat = [
     [
-        'emri' => 'Aventador',
-        'motorri' => '6.0L V12',
-<<<<<<< HEAD
-        'horsepower' => '820',
-        'shpejtesia' => '320 km/h',
-        'pershpejtimi' => '2.8 sekonda',
-        'transmission' => 'Automatik',
-        'konsuminaftes' => '12',
-        'price' => '1000000',
-        'description' => 'Makine sportive.'
-=======
         'horsepower' => '820 kuaj fuqi',
         'shpejtesia' => 'Shpejtesia maksimale 320 km/h',
         'pershpejtimi' => '0-100 km/h:2.8 sekonda',
@@ -25,7 +14,7 @@ $veturat = [
         'materialet_brenda'=>'',
         'price' => '1000000',
         'description' => 'Kategoria: Sportive.'
->>>>>>> 6b06a8e35523ce541c1df4610e9bccb1b2dfdd36
+
     ],
     [
         'emri' => 'Audi R8',
@@ -35,11 +24,8 @@ $veturat = [
         'pershpejtimi' => '0-100 km/h: Rreth 3.1 sekonda',
         'transmission' => 'Automatik',
         'konsuminaftes' => '13-14 litra për 100km',
-<<<<<<< HEAD
-=======
         'komoditeti'=>'',
         'materialet_brenda'=>'',
->>>>>>> 6b06a8e35523ce541c1df4610e9bccb1b2dfdd36
         'price' => '180000',
         'description' => 'Kategoria: Sportive'
     ],
@@ -51,11 +37,8 @@ $veturat = [
         'pershpejtimi' => '0-100 km/h: Rreth 2.2 sekonda',
         'transmission' => 'Automatik',
         'konsuminaftes' => '14 litra për 100 km',
-<<<<<<< HEAD
-=======
         'komoditeti'=>'',
         'materialet_brenda'=>'',
->>>>>>> 6b06a8e35523ce541c1df4610e9bccb1b2dfdd36
         'price' => '1600000',
         'description' => 'Kategoria: Sportive'
     ],
@@ -67,15 +50,11 @@ $veturat = [
         'pershpejtimi' => '0-100 km/h: Vetëm 2 sekonda',
         'transmission' => 'Automatik',
         'konsuminaftes' => '18-10 litra për 100 km',
-<<<<<<< HEAD
-        'price' => '4900000',
-        'description' => 'Kategoria: Sportive'
-    ]
-=======
-        'komoditeti'=>'',
+        'komoditeti' => '',
         'materialet_brenda'=>'',
         'price' => '4900000',
-        'description' => 'Kategoria: Sportive'
+        'description' => 'Kategoria: Sportive',
+        
     ],
     [
         'emri' => 'Acura',
@@ -682,17 +661,238 @@ Teknologjia e përparuar e autopilotit e bën atë të dallohet në luksin e tij
         'price' => '26000',
         'description' => 'Kategoria: Luksoze'
     ],
->>>>>>> 6b06a8e35523ce541c1df4610e9bccb1b2dfdd36
+    [
+        'emri' => 'Golf 6',
+        'motorri' => '1.6',
+        'horsepower' => '',
+        'shpejtesia' => '',
+        'pershpejtimi' => '',
+        'transmission' => '',
+        'konsuminaftes' => '4-5 litra ne 100km/h ',
+        'komoditeti'=>'',
+        'materialet_brenda'=>'',
+        'price' => '8000',
+        'description' => 'Kategoria: Ekonomike'
+    ],
+    [
+        'emri' => 'Golf 6 R-line',
+        'motorri' => '2.0 TDI',
+        'horsepower' => '',
+        'shpejtesia' => '',
+        'pershpejtimi' => '',
+        'transmission' => '',
+        'konsuminaftes' => 'Shpenzime te ulta ',
+        'komoditeti'=>'',
+        'materialet_brenda'=>'',
+        'price' => '10000',
+        'description' => 'Kategoria: Ekonomike'
+    ],
+    [
+        'emri' => 'Golf 7',
+        'motorri' => '2.0',
+        'horsepower' => '',
+        'shpejtesia' => '',
+        'pershpejtimi' => '',
+        'transmission' => '',
+        'konsuminaftes' => '4-5 litra ne 100km/h ',
+        'komoditeti'=>'',
+        'materialet_brenda'=>'',
+        'price' => '12000',
+        'description' => 'Kategoria: Ekonomike'
+    ],
+    [
+        'emri' => 'Pasat CC ',
+        'motorri' => '2.0',
+        'horsepower' => '',
+        'shpejtesia' => '',
+        'pershpejtimi' => '',
+        'transmission' => '',
+        'konsuminaftes' => '4-6 litra ne 100km/h ',
+        'komoditeti'=>'',
+        'materialet_brenda'=>'',
+        'price' => '15000',
+        'description' => 'Kategoria: Ekonomike'
+    ],
+    [
+        'emri' => 'Passat Caravan',
+        'motorri' => '1.9',
+        'horsepower' => '',
+        'shpejtesia' => '',
+        'pershpejtimi' => '',
+        'transmission' => '',
+        'konsuminaftes' => '4.5-5.5 litra ne 100km/h ',
+        'komoditeti'=>'',
+        'materialet_brenda'=>'',
+        'price' => '18000',
+        'description' => 'Kategoria: Ekonomike'
+    ],
+    [
+        'emri' => 'Polo',
+        'motorri' => '1.2',
+        'horsepower' => '',
+        'shpejtesia' => '',
+        'pershpejtimi' => '',
+        'transmission' => '',
+        'konsuminaftes' => '4.4-5 litra ne 100km/h ',
+        'komoditeti'=>'',
+        'materialet_brenda'=>'',
+        'price' => '7000',
+        'description' => 'Kategoria: Ekonomike'
+    ],
+    [
+        'emri' => 'BMW X7',
+        'motorri' => '',
+        'horsepower' => '',
+        'shpejtesia' => '',
+        'pershpejtimi' => '',
+        'transmission' => '',
+        'konsuminaftes' => ' ',
+        'komoditeti'=>'Veture me komoditet te larte me kapacitet deri ne 7 pasagjere',
+        'materialet_brenda'=>'',
+        'price' => '75000',
+        'description' => 'Kategoria: Familjare'
+    ],
+    [
+        'emri' => 'Tiguan',
+        'motorri' => '',
+        'horsepower' => '',
+        'shpejtesia' => '',
+        'pershpejtimi' => '',
+        'transmission' => '',
+        'konsuminaftes' => 'I ulet ',
+        'komoditeti'=>'Veture me komoditet te larte me kapacitet deri ne 5 pasagjere,me stabilitet ne qdo terren',
+        'materialet_brenda'=>'',
+        'price' => '20000',
+        'description' => 'Kategoria: Familjare'
+    ],
+    [
+        'emri' => 'Seat Ibiza',
+        'motorri' => '',
+        'horsepower' => '',
+        'shpejtesia' => '',
+        'pershpejtimi' => '',
+        'transmission' => '',
+        'konsuminaftes' => 'Shume i ulet ',
+        'komoditeti'=>'Kapacitet deri ne 5 pasagjere,kryesisht per familje te vogla me bagazh te bollshem',
+        'materialet_brenda'=>'',
+        'price' => '8000',
+        'description' => 'Kategoria: Familjare'
+    ],
+    [
+        'emri' => 'Golf 8',
+        'motorri' => '',
+        'horsepower' => '',
+        'shpejtesia' => '',
+        'pershpejtimi' => '',
+        'transmission' => '',
+        'konsuminaftes' => ' I ulet me mundsi hibride deri ne 50kilometra',
+        'komoditeti'=>'Kapacitet deri ne 5 pasagjere,me hapesire te mjaftueshme dhe bagazh te bollshem, i pershtatshem per perdorim te perditshem familjar.',
+        'materialet_brenda'=>'',
+        'price' => '35000',
+        'description' => 'Kategoria: Familjare'
+    ],
+    [
+        'emri' => 'Seat Taraco',
+        'motorri' => '',
+        'horsepower' => '',
+        'shpejtesia' => '',
+        'pershpejtimi' => '',
+        'transmission' => '',
+        'konsuminaftes' => ' ',
+        'komoditeti'=>'Veture me komoditet te larte me kapacitet deri ne 7 pasagjere,hapsire te mjaftueshme per te gjithe familjen dhe po ashtu bagazh te bollshem.',
+        'materialet_brenda'=>'',
+        'price' => '39000',
+        'description' => 'Kategoria: Familjare'
+    ],
+    [
+        'emri' => 'Range Rover',
+        'motorri' => '',
+        'horsepower' => '',
+        'shpejtesia' => '',
+        'pershpejtimi' => '',
+        'transmission' => '',
+        'konsuminaftes' => ' ',
+        'komoditeti'=>'Kapacitet deri ne 5 pasagjere,bagazh te madh,veture ideale per udhtime te gjata ose aventura familjare,sistemi terheqjes 4x4.',
+        'materialet_brenda'=>'',
+        'price' => '30000',
+        'description' => 'Kategoria: Familjare'
+    ],
+    [
+        'emri' => 'BMW E90',
+        'motorri' => '2.0',
+        'horsepower' => '',
+        'shpejtesia' => '',
+        'pershpejtimi' => '',
+        'transmission' => 'Manual',
+        'konsuminaftes' => ' ',
+        'komoditeti'=>'',
+        'materialet_brenda'=>'',
+        'price' => '10000',
+        'description' => 'Kategoria: OLD_Timer'
+    ],
+    [
+        'emri' => 'Mercedes 190',
+        'motorri' => '2.5 Dizel',
+        'horsepower' => '',
+        'shpejtesia' => '',
+        'pershpejtimi' => '',
+        'transmission' => 'Manual',
+        'konsuminaftes' => ' ',
+        'komoditeti'=>'',
+        'materialet_brenda'=>'',
+        'price' => '5000',
+        'description' => 'Kategoria: OLD_Timer'
+    ],
+    [
+        'emri' => 'Mercedes E180',
+        'motorri' => '2.5 Dizel',
+        'horsepower' => '',
+        'shpejtesia' => '',
+        'pershpejtimi' => '',
+        'transmission' => 'Manual',
+        'konsuminaftes' => ' ',
+        'komoditeti'=>'',
+        'materialet_brenda'=>'',
+        'price' => '7000',
+        'description' => 'Kategoria: OLD_Timer'
+    ],
+    [
+        'emri' => 'Golf 2 GTI',
+        'motorri' => '2.0 Benzin',
+        'horsepower' => '',
+        'shpejtesia' => '',
+        'pershpejtimi' => '',
+        'transmission' => 'Manual',
+        'konsuminaftes' => ' ',
+        'komoditeti'=>'',
+        'materialet_brenda'=>'',
+        'price' => '6000',
+        'description' => 'Kategoria: OLD_Timer'
+    ],
+    [
+        'emri' => 'Golf 2 ',
+        'motorri' => '1.6 Benzin',
+        'horsepower' => '',
+        'shpejtesia' => '',
+        'pershpejtimi' => '',
+        'transmission' => 'Manual',
+        'konsuminaftes' => ' ',
+        'komoditeti'=>'',
+        'materialet_brenda'=>'',
+        'price' => '4000',
+        'description' => 'Kategoria: OLD_Timer'
+    ],
+
 ];
 $veturatDB->shtoVeturat($veturat);
-
 
 $veturatDB->perditesoVeturat('Aventador', [
     'price' => '1000000',
     'description' => 'Kategoria: Sportive'
 ]);
-$veturatDB->perditesoVeturat('Koenigsegg CcX',[
-    'shpejtesia' =>'Shpejtesia maksimale: Mbi 447km/h'
+
+$veturatDB->perditesoVeturat('Koenigsegg CcX', [
+    'shpejtesia' => 'Shpejtesia maksimale: Mbi 447km/h'
 ]);
 
 $veturat = $veturatDB->merrVeturat();

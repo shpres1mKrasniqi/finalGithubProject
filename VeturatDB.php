@@ -9,7 +9,7 @@ class VeturatDB extends ConnectDB {
     }
 
     public function shtoVeturat($veturat) {
-<<<<<<< HEAD
+
         $sql = "INSERT IGNORE INTO Veturat (emri, motorri, horsepower, shpejtesia, pershpejtimi, transmission, konsuminaftes, price, description)
                 VALUES (:emri, :motorri, :horsepower, :shpejtesia, :pershpejtimi, :transmission, :konsuminaftes, :price, :description)";
 
@@ -27,8 +27,7 @@ class VeturatDB extends ConnectDB {
                 ':description' => $vetura['description']
             ]);
         }
-    }
-=======
+    
         $sql = "INSERT IGNORE INTO Veturat 
                 (emri, motorri, horsepower, shpejtesia, pershpejtimi, transmission, konsuminaftes, komoditeti, materialet_brenda, price, description)
                 VALUES 
@@ -52,9 +51,6 @@ class VeturatDB extends ConnectDB {
             ]);
         }
     }
-    
->>>>>>> 6b06a8e35523ce541c1df4610e9bccb1b2dfdd36
-
     public function perditesoVeturat($emri, $data) {
         $fields = [];
         $values = [];
