@@ -14,17 +14,31 @@ $id = $_GET['id'];
 $record = $teDheat->lexoProduktetSipasID($id);
 
 if (isset($_POST['edit'])) {
-    $teDheat->setFoto($_POST['foto']);
-    $teDheat->setModeli($_POST['modeli']);
-    $teDheat->setPershkrimi($_POST['pershkrimi']);
-    $teDheat->setCmimi($_POST['cmimi']);
-    $teDheat->setModifikuarNga($_POST['modifikuar_nga']);
-    $teDheat->ndryshoProdukt($id); 
-    
-    echo "<script>
-        alert('Produkti u perditesua me sukses!');
-        document.location='adminProducts.php';
-    </script>";
+   
+    $foto = htmlspecialchars(trim($_POST['foto']));
+    $modeli = htmlspecialchars(trim($_POST['modeli']));
+    $pershkrimi = htmlspecialchars(trim($_POST['pershkrimi']));
+    $cmimi = htmlspecialchars(trim($_POST['cmimi']));
+    $modifikuarNga = htmlspecialchars($_SESSION['admin_id']); 
+
+    if (empty($foto) || empty($modeli) || empty($pershkrimi) || empty($cmimi)) {
+        echo "<script>alert('Te gjitha fushat jan te detyrueshme!');</script>";
+    }
+
+ else {
+        
+        $teDheat->setFoto($foto);
+        $teDheat->setModeli($modeli);
+        $teDheat->setPershkrimi($pershkrimi);
+        $teDheat->setCmimi($cmimi);
+        $teDheat->setModifikuarNga($modifikuarNga);
+        $teDheat->ndryshoProdukt($id);
+
+        echo "<script>
+            alert('Produkti u perditesua me sukses!');
+            document.location='adminProducts.php';
+        </script>";
+    }
 }
 ?>
 
@@ -42,16 +56,16 @@ if (isset($_POST['edit'])) {
                 <button id="back" type="button" onclick="window.location.href='adminLogin.php';">BACK</button>
             </a>
             <label for="foto">Foto</label>
-            <input type="text" name="foto" id="foto" value="<?php echo $record['foto']; ?>" required>
+            <input type="text" name="foto" id="foto" value="<?php echo $record['foto']; ?>">
 
             <label for="modeli">Modeli</label>
-            <input type="text" class="inp" name="modeli" id="modeli" value="<?php echo $record['modeli']; ?>" placeholder="Modeli" required>
+            <input type="text" class="inp" name="modeli" id="modeli" value="<?php echo $record['modeli']; ?>" placeholder="Modeli">
 
-            <label for="pershkrimi">Përshkrimi</label>
+            <label for="pershkrimi">Pershkrimi</label>
             <textarea class="inp" name="pershkrimi" id="pershkrimi" placeholder="Përshkrimi" rows="4" required><?php echo $record['pershkrimi']; ?></textarea>
 
-            <label for="cmimi">Çmimi</label>
-            <input type="number" class="inp" name="cmimi" id="cmimi" value="<?php echo $record['cmimi']; ?>" placeholder="Çmimi" step="0.01" required>
+            <label for="cmimi">Cmimi</label>
+            <input type="number" class="inp" name="cmimi" id="cmimi" value="<?php echo $record['cmimi']; ?>" placeholder="Çmimi" step="0.01">
 
             <label for="modifikuar_nga">Modifikuar Nga</label>
             <input type="text" class="inp" name="modifikuar_nga" id="modifikuar_nga" readonly value="<?php echo $_SESSION['admin_id']; ?>">
