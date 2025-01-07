@@ -52,7 +52,7 @@
 
     <div class="signupContainer">
 
-        <form action="signup.php" id="signupforma" class="formaSignup" method="POST">
+        <form action='signup.php' id="signupforma" class="formaSignup" method="POST">
            
                 <div class="h2">
                     <h2>Signup</h2>

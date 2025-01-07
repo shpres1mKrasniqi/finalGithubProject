@@ -1,0 +1,122 @@
+body {
+
+    display: flex;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff; 
+
+}
+
+.kontinieri {
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table p {
+    margin: 0;
+    padding: 20px;
+    font-size: 1.5em;
+    color: #0074d9; 
+    text-align: center;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #00223e; 
+    color: white;
+    text-transform: uppercase;
+}
+
+td {
+    color: #333; 
+}
+
+td#de a button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin-right: 5px;
+    text-transform: uppercase;
+    font-size: 90%; 
+}
+
+#d {
+    background-color: #ff4136;
+}
+
+#edit {
+    background-color: #032f56; 
+}
+
+#bak{
+    background-color: #032f56; 
+    padding: 8px 12px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-right: 5px;
+    text-transform: uppercase;
+    font-size: 90%; 
+}
+
+#d:hover {
+    background-color: #e33c2b;
+    transition: 0.5s;
+}
+
+#edit:hover {
+    background-color: #041c31;
+    transition: 0.5s;
+}
+
+@media (max-width: 480px) {
+    .kontinieri {
+        margin: 10px auto;
+        width: 90%;
+        box-shadow: none;
+    }
+
+    table p {
+        font-size: 1em;
+    }
+
+    th, td {
+        font-size: 0.6em;
+        padding: 5px 8px;
+    }
+
+    td#de a button {
+        padding: 3px 5px;
+        font-size: 0.8em;
+        width: 80%;
+        margin-bottom: 5px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+input.error::placeholder{
+    color: red;
+
+}
+
+input.error{
+    border:1px solid red;
+}

@@ -9,6 +9,7 @@ class VeturatDB extends ConnectDB {
     }
 
     public function shtoVeturat($veturat) {
+<<<<<<< HEAD
         $sql = "INSERT IGNORE INTO Veturat (emri, motorri, horsepower, shpejtesia, pershpejtimi, transmission, konsuminaftes, price, description)
                 VALUES (:emri, :motorri, :horsepower, :shpejtesia, :pershpejtimi, :transmission, :konsuminaftes, :price, :description)";
 
@@ -27,6 +28,32 @@ class VeturatDB extends ConnectDB {
             ]);
         }
     }
+=======
+        $sql = "INSERT IGNORE INTO Veturat 
+                (emri, motorri, horsepower, shpejtesia, pershpejtimi, transmission, konsuminaftes, komoditeti, materialet_brenda, price, description)
+                VALUES 
+                (:emri, :motorri, :horsepower, :shpejtesia, :pershpejtimi, :transmission, :konsuminaftes, :komoditeti, :materialet_brenda, :price, :description)";
+    
+        $stmt = $this->dbconn->prepare($sql);
+    
+        foreach ($veturat as $vetura) {
+            $stmt->execute([
+                ':emri' => $vetura['emri'] ?? null,
+                ':motorri' => empty(trim($vetura['motorri'])) ? null : $vetura['motorri'],
+                ':horsepower' => empty(trim($vetura['horsepower'])) ? null : $vetura['horsepower'],
+                ':shpejtesia' => empty(trim($vetura['shpejtesia'])) ? null : $vetura['shpejtesia'],
+                ':pershpejtimi' => empty(trim($vetura['pershpejtimi'])) ? null : $vetura['pershpejtimi'],
+                ':transmission' => empty(trim($vetura['transmission'])) ? null : $vetura['transmission'],
+                ':konsuminaftes' => empty(trim($vetura['konsuminaftes'])) ? null : $vetura['konsuminaftes'],
+                ':komoditeti' => empty(trim($vetura['komoditeti'])) ? null : $vetura['komoditeti'],
+                ':materialet_brenda' => empty(trim($vetura['materialet_brenda'])) ? null : $vetura['materialet_brenda'],
+                ':price' => (float)($vetura['price'] ?? 0),
+                ':description' => empty(trim($vetura['description'])) ? null : $vetura['description'],
+            ]);
+        }
+    }
+    
+>>>>>>> 6b06a8e35523ce541c1df4610e9bccb1b2dfdd36
 
     public function perditesoVeturat($emri, $data) {
         $fields = [];

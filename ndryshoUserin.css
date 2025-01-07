@@ -1,0 +1,88 @@
+body {
+    background: linear-gradient(150deg, #ffffff, #32aec7); 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#formulari {
+    width: 90%;
+    max-width: 400px;
+    background-color: blue;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow:  0 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    color: #ffffff;
+    text-shadow:  0 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    border: none;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#back {
+    background-color: #0077B6;
+    margin-bottom: 10px;
+}
+
+#back:hover {
+    background-color: #0096C7;
+}
+
+button[type="submit"] {
+    background-color: #001f3f; 
+}
+
+button[type="submit"]:hover {
+    background-color: #001a36;
+}
+
+@media (max-width: 480px) {
+    #formulari {
+        padding: 15px;
+    }
+
+    input {
+        font-size: 12px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
