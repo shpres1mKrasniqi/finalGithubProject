@@ -153,6 +153,36 @@ class AddProducts extends KonektimimeDB {
             return false;
         }
     }
+
+    //metoda Update Per produktet: 
+
+
+    public function lexoProduktetSipasID($id){
+
+        $sql="SELECT * FROM produktet WHERE id=:id";
+
+        $stm = $this->dbconn->prepare($sql);
+        $stm->execute([':id'=> $id]);
+
+        $rezultati = $stm->fetch(PDO::FETCH_ASSOC);
+        return $rezultati;
+    }
+
+    public function ndryshoProdukt($id) {
+        $sql = "UPDATE produktet 
+                SET foto = :foto, modeli = :modeli, pershkrimi = :pershkrimi, cmimi = :cmimi, modifikuar_nga = :modifikuar_nga 
+                WHERE id = :id";
+    
+        $stm = $this->dbconn->prepare($sql);
+        $stm->bindParam(':foto', $this->foto);
+        $stm->bindParam(':modeli', $this->modeli);
+        $stm->bindParam(':pershkrimi', $this->pershkrimi);
+        $stm->bindParam(':cmimi', $this->cmimi);
+        $stm->bindParam(':modifikuar_nga', $this->modifikuar_nga);
+        $stm->bindParam(':id', $id);
+        $stm->execute();
+    }
+    
 }
 
 //shtimi i produkteve:

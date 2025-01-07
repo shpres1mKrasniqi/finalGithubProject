@@ -68,7 +68,7 @@
         <p><?php echo $value['pershkrimi']; ?></p>
         <h6><?php echo $value['cmimi']; ?></h6>
         <p>Shtuar nga admin: <?php echo $value['shtuar_nga']; ?></p>
-        <p>Modifikuar nga admin: ?</p>   
+        <p>Modifikuar nga admin: <?php echo $value ['modifikuar_nga']?></p>   
         <button class="view-audiA5" onclick="window.location.href='Details.html'">VIEW DETAILS</button>
         
 </a>

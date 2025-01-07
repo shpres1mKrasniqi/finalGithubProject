@@ -13,16 +13,18 @@ body {
 #formulari {
     max-width: 600px;
     width: 100%; 
-    background-color: #ffffff;
+    background: linear-gradient(150deg, navy, blue);
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 1px solid #ddeeff;
+    border: none;
+    text-align: center;
 }
+
 
 #formulari h3 {
     text-align: center;
-    color: #4682b4; 
+    color: #ffff; 
     font-size: 24px;
     margin-bottom: 20px;
 }
@@ -30,43 +32,44 @@ body {
 
 label {
     font-size: 16px;
-    color: #4682b4;
+    color: #ffff;
     margin-bottom: 5px;
     display: block;
 }
 
 
+
 .inp {
-    width: 95%;
+    width: 80%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #4682b4;
+    border: none;
     border-radius: 5px;
     font-size: 16px;
-    color: #333;
-    background-color: #f9f9f9;
+    color: #000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .inp:focus {
-    border-color: #5c9edc;
-    background-color: #fff;
     outline: none;
 }
 
 
+
 button {
-    background-color: #4682b4; 
+    background-color: navy; 
     color: #fff;
     padding: 12px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     font-size: 18px;
     cursor: pointer;
-    width: 100%;
+    width: 80%;
+    margin-bottom: 15px;
 }
 
 button:hover {
-    background-color: #5c9edc;
+    background-color: #254766;
 }
 
 

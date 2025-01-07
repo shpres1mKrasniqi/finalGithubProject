@@ -36,7 +36,7 @@ if (isset($_POST['edit'])) {
                 <button id="back" type="button" onclick="window.location.href='leximiUserave.php';">BACK</button>
             </a>
 
-            <label for="emri"></label>
+            <label for="emri">First Name</label>
             <input type="text" id="emri" name="emri" value="<?php echo $record['emri']; ?>" required>
 
             <label for="mbiemri">Last Name</label>

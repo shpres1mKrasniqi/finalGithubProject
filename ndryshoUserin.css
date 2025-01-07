@@ -1,5 +1,5 @@
 body {
-    background-color: #ffffff; 
+    background: linear-gradient(150deg, #ffffff, #32aec7); 
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -12,16 +12,17 @@ body {
 #formulari {
     width: 90%;
     max-width: 400px;
-    background-color: #f9f9f9;
+    background-color: blue;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 h3 {
     text-align: center;
     margin-bottom: 20px;
-    color: #333;
+    color: #ffffff;
+    text-shadow:  0 4px 6px rgba(0, 0, 0, 0.6);
 }
 
 form {
@@ -31,33 +32,37 @@ form {
 
 label {
     margin-bottom: 5px;
-    color: #555;
+    color: #ffffff;
+    text-shadow:  0 4px 6px rgba(0, 0, 0, 0.6);
 }
 
 input {
     margin-bottom: 15px;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 20px;
+    border: none;
     font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 button {
     padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #back {
-    background-color: #ff0000;
+    background-color: #0077B6;
     margin-bottom: 10px;
 }
 
 #back:hover {
-    background-color: #cc0000;
+    background-color: #0096C7;
 }
 
 button[type="submit"] {

@@ -20,6 +20,9 @@ require_once('addProducts.php');
         <div id="formulari">
             <h3>Shtimi i Produkteve</h3>
             <form action="" method="POST">
+            <a href="adminLogin.php" style="text-decoration: none;">
+                <button id="back" type="button" onclick="window.location.href='adminLogin.php';">BACK</button>
+            </a>
                 <label for="foto">Foto</label>
                 <input type="file" name="foto" id="foto" accept="image/*" required>
 
