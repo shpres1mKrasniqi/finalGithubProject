@@ -83,7 +83,7 @@ $allTeDhenat = $tedhenat->shfaqTedhenat();
         <p>Shtuar nga admin: <?php echo $value['shtuar_nga']; ?></p>
         <p>Modifikuar nga admin: <?php echo $value['modifikuar_nga'];?></p>  
         <a href="delProducts.php?id=<?php echo $value['id']; ?>" onclick="return confirm('A jeni i sigurt qe deshironi te fshini kete produkt?');">
-    <button>DELETE</button>
+    <button id="d">DELETE</button>
 </a>
 <a href="changeProducts.php?id=<?php echo $value['id']; ?>">
     <button id="edit">EDIT</button>

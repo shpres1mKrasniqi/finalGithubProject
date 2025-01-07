@@ -306,6 +306,12 @@ opacity: 1;
     color: #00ff04;
 
 }
+#d{
+    background-color: rgb(255, 0, 0);
+}
+#d:hover{
+    background-color: rgb(205, 23, 23);
+}
 
 /* rregullimi i slider*/
 .containeri {

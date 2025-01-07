@@ -145,7 +145,7 @@ class AddProducts extends KonektimimeDB {
 
         if($stm==true){
             echo"<script>
-            alert('Produkti eshte Fshire me Sukses!');
+            alert('Produkti me id $id eshte Fshire me Sukses!');
             document.location='adminProducts.php';
             </script>";
         }

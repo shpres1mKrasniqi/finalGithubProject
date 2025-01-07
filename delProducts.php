@@ -7,10 +7,9 @@
     if(isset($_GET['id'])){
         $id = $_GET['id'];
         $dhena->delProducts($id);
-        echo" Produkti me id $id u fshi me sukses!";
     }
     else{
-        echo"ID nuk eshte derguar!";
+        echo "<script>alert('ID nuk eshte Derguar!');</script>";
     }
 
 ?>

@@ -22,7 +22,7 @@ if (isset($_POST['edit'])) {
     $modifikuarNga = htmlspecialchars($_SESSION['admin_id']); 
 
     if (empty($foto) || empty($modeli) || empty($pershkrimi) || empty($cmimi)) {
-        echo "<script>alert('Te gjitha fushat jan te detyrueshme!');</script>";
+        echo "<script>alert('Te gjitha fushat duhet te plotesohen!');</script>";
     }
 
  else {
@@ -62,10 +62,10 @@ if (isset($_POST['edit'])) {
             <input type="text" class="inp" name="modeli" id="modeli" value="<?php echo $record['modeli']; ?>" placeholder="Modeli">
 
             <label for="pershkrimi">Pershkrimi</label>
-            <textarea class="inp" name="pershkrimi" id="pershkrimi" placeholder="Përshkrimi" rows="4" required><?php echo $record['pershkrimi']; ?></textarea>
+            <textarea class="inp" name="pershkrimi" id="pershkrimi" placeholder="Pershkrimi" rows="4" required><?php echo $record['pershkrimi']; ?></textarea>
 
             <label for="cmimi">Cmimi</label>
-            <input type="number" class="inp" name="cmimi" id="cmimi" value="<?php echo $record['cmimi']; ?>" placeholder="Çmimi" step="0.01">
+            <input type="text" class="inp" name="cmimi" id="cmimi" value="<?php echo $record['cmimi']; ?>" placeholder="Cmimi">
 
             <label for="modifikuar_nga">Modifikuar Nga</label>
             <input type="text" class="inp" name="modifikuar_nga" id="modifikuar_nga" readonly value="<?php echo $_SESSION['admin_id']; ?>">
