@@ -20,10 +20,14 @@
 <body>
     
 
-<div class="kontinieri" id="kontinieri">
+<div class="kontinieri" id="kontinieri" style="overflow-x:auto;">
 
     <table>
-        <p>List of Users</p>
+         <a href="adminLogin.php">
+
+<button id="bak">BACK</button>
+
+</a>
         <tr>
         <th>FistName</th>
         <th>LastName</th>
@@ -42,7 +46,7 @@
         <td><?php echo $value['emaili'];?></td>
         <td id="de">
 
-        <a href="delete.php?id=<?php echo $value['id'];?>">
+        <a href="delete.php?id=<?php echo $value['id'];?>" onclick="return confirm('A jeni i sigurt qe deshironi te fshini kete produkt?');">
 
         <button id="d">DELETE</button>
 

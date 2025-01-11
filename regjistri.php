@@ -102,10 +102,10 @@ class SignupForma extends KonektimimeDB{
     
         if ($stmt->rowCount() > 0) {
             echo"<script>
-            alert('Email-i  ekziston! Ju lutem përdorni nje email tjeter!');
+            alert('Email-i  ekziston! Ju lutem perdorni nje email tjeter!');
             document.location='signup.php';
             </script>";
-            return "Email-i  ekziston! Ju lutem përdorni nje email tjeter.";
+            return "Email-i  ekziston! Ju lutem perdorni nje email tjeter.";
         }
     
        
@@ -118,7 +118,10 @@ class SignupForma extends KonektimimeDB{
         $stmt->bindParam(':paswordi', $hashedPassword);
     
         if ($stmt->execute()) {
-            header("Location: Home.html");
+
+            setcookie("emri", $this->emri, time() +(86400* 30), "/");
+
+            header("Location: index.php");
            exit();
         } else {
             return "GABIM. Ju lutem provoni perseri.";
@@ -206,6 +209,20 @@ public function fshijUserat($id){
         return $rezultati['admin_userat'] ?? 0;
     }
 
+
+    //Numerimi i produkteve ne Autosallon: 
+
+
+    public function numeroProduktet(){
+        $sql = "SELECT COUNT(*) as produktet FROM produktet";
+
+        $stm = $this->dbconn->prepare($sql);
+
+        $stm->execute();
+
+        $rez = $stm->fetch(PDO::FETCH_ASSOC);
+        return $rez['produktet']?? 0;
+    }
     
 }
 

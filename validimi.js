@@ -43,9 +43,9 @@ window.addEventListener("load", initSlider);
 const formaSignup = document.getElementById('signupforma');
 const emri = document.getElementById('emri');
 const mbiemri = document.getElementById('mbiemri');
-const emaili = document.getElementById('emaili');
-const passwordi1 = document.getElementById('paswordi');
-const passwordi2 = document.getElementById('confirmPaswordi');
+const emaili = document.getElementById('imejli');
+const passwordi1 = document.getElementById('fjalekalimi');
+const passwordi2 = document.getElementById('fjalekalimi2');
 
 
 const formaLogin = document.getElementById('form');

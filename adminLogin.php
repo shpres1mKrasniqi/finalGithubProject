@@ -10,7 +10,7 @@ if (!isset($_SESSION['admin_id'])) {
 
 }
 
-echo "Ju jeni kyqur si admin me ID: , Admin ID: " . $_SESSION['admin_id'];
+echo "Ju jeni kyqur si admin me ID: " . $_SESSION['admin_id'];
 require_once('regjistri.php');
 
 $tedhenat = new SignupForma();
@@ -18,6 +18,8 @@ $tedhenat = new SignupForma();
 $userateRi = $tedhenat->userateRi();
 
 $adminatNumri = $tedhenat->adminatNumri();
+
+$numriProdukteve = $tedhenat->numeroProduktet();
 
 ?>
 
@@ -37,9 +39,9 @@ $adminatNumri = $tedhenat->adminatNumri();
          <h1>Admin</h1>
         </div>
          <ul id="listaemenus">
-             <li><a href="aboutUs.html">About Us</a></li>
+             <li><a href="News.html">Add News</a></li>
              <li><a href="leximiUserave.php">Users</a></li>
-             <li><a href="contactus.html">Contact Us</a></li>
+             <li><a href="shtoProdukte.php">Add Products</a></li>
          </ul>
          <div class="menuIcon">
 
@@ -86,7 +88,7 @@ $adminatNumri = $tedhenat->adminatNumri();
             <img src="fotot/animatedCars.png" alt="statistikat per userat e ri">
             <h3>Products</h3>
             <p>Total</p>
-            <h6>0</h6>   
+            <h6><?php echo $numriProdukteve;?></h6>   
     
         </div>
 

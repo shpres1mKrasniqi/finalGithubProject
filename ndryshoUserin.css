@@ -1,90 +1,88 @@
-
 body {
+    background: linear-gradient(150deg, #ffffff, #32aec7); 
     font-family: Arial, sans-serif;
-    background-color: #f4f9fc;
-    color: #333;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 #formulari {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
     max-width: 400px;
-    width: 100%;
+    background-color: blue;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 h3 {
     text-align: center;
-    color: #004aad;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow:  0 4px 6px rgba(0, 0, 0, 0.6);
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    align-items: center;
 }
 
 label {
-    font-weight: bold;
-    color: #004aad;
-    width: 80%;
+    margin-bottom: 5px;
+    color: #ffffff;
+    text-shadow:  0 4px 6px rgba(0, 0, 0, 0.6);
 }
 
 input {
+    margin-bottom: 15px;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 20px;
+    border: none;
     font-size: 14px;
-    width: 80%;
-    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 button {
     padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
+    color: #fff;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 80%;
-}
-
-button[name="edit"] {
-    background-color: #004aad;
-    color: #ffffff;
-}
-
-button[name="edit"]:hover {
-    background-color: #00338d;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #back {
-    background-color: #d9534f;
-    color: #ffffff;
+    background-color: #0077B6;
     margin-bottom: 10px;
-    text-align: center;
 }
 
 #back:hover {
-    background-color: #c9302c;
+    background-color: #0096C7;
 }
 
-a {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+button[type="submit"] {
+    background-color: #001f3f; 
+}
+
+button[type="submit"]:hover {
+    background-color: #001a36;
 }
 
 @media (max-width: 480px) {
     #formulari {
         padding: 15px;
+    }
+
+    input {
+        font-size: 12px;
+    }
+
+    button {
+        font-size: 14px;
     }
 }

@@ -1,11 +1,24 @@
 <?php
+session_start();
 
-    require_once('addProducts.php');
 
-    $tedhenat = new AddProducts();
+if (!isset($_SESSION['admin_id'])) {
+  
+    header("Location: loginiAdmin.php");
+    exit();
+}
 
-    $allTeDhenat = $tedhenat->shfaqTedhenat();
+
+echo "Ju jeni kyçur si admin me ID: " . htmlspecialchars($_SESSION['admin_id']);
+
+require_once('regjistri.php');
+require_once('addProducts.php');
+
+$datat = new SignupForma();
+$tedhenat = new AddProducts();
+$allTeDhenat = $tedhenat->shfaqTedhenat();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,9 +40,9 @@
          <h1>SRF AutoCenter</h1>
         </div>
          <ul id="listaemenus">
-             <li><a href="aboutUs.html">About Us</a></li>
-             <li><a href="Home.html">Home</a></li>
-             <li><a href="contactus.html">Contact Us</a></li>
+             <li><a href="leximiUserave.php">Users</a></li>
+             <li><a href="News.html">Add News</a></li>
+             <li><a href="shtoProdukte.php">Add Products</a></li>
          </ul>
          <div class="menuIcon">
 
@@ -68,10 +81,15 @@
         <p><?php echo $value['pershkrimi']; ?></p>
         <h6><?php echo $value['cmimi']; ?></h6>
         <p>Shtuar nga admin: <?php echo $value['shtuar_nga']; ?></p>
-        <p>Modifikuar nga admin: <?php echo $value ['modifikuar_nga']?></p>   
-        <button class="view-audiA5" onclick="window.location.href='Details.html'">VIEW DETAILS</button>
-        
+        <p>Modifikuar nga admin: <?php echo $value['modifikuar_nga'];?></p>  
+        <a href="delProducts.php?id=<?php echo $value['id']; ?>" onclick="return confirm('A jeni i sigurt qe deshironi te fshini kete produkt?');">
+    <button id="d">DELETE</button>
 </a>
+<a href="changeProducts.php?id=<?php echo $value['id']; ?>">
+    <button id="edit">EDIT</button>
+</a>
+
+        
 
         
             </div>

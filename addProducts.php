@@ -10,20 +10,28 @@ class AddProducts extends KonektimimeDB {
     private $pershkrimi;
     private $cmimi;
     private $shtuar_nga;
-    private $shtuar_ne;
+    private $modifikuar_nga;
     private $dbconn;
 
-    public function __construct($id='', $modeli='', $foto='', $pershkrimi='', $cmimi='', $shtuar_nga='', $shtuar_ne='') {
+    public function __construct($id='', $modeli='', $foto='', $pershkrimi='', $cmimi='', $shtuar_nga='', $modifikuar_nga='') {
         $this->id = $id;
         $this->modeli = $modeli;
         $this->foto = $foto;
         $this->pershkrimi = $pershkrimi;
         $this->cmimi = $cmimi;
         $this->shtuar_nga = $shtuar_nga;
-        $this->shtuar_ne = $shtuar_ne;
+        $this->modifikuar_nga = $modifikuar_nga;
+      
         $this->dbconn = $this->connectDB();  
     }
 
+    public function getID(){
+        return $this->id;
+    }
+
+    public function setID($id){
+        $this->id=$id;
+    }
 
     public function getFoto() {
         return $this->foto;
@@ -69,15 +77,14 @@ class AddProducts extends KonektimimeDB {
         $this->shtuar_nga = $shtuar_nga;
     }
 
+    public function getModifikuarNga() {
+        return $this->modifikuar_nga;
+    }
+
+    public function setModifikuarNga($modifikuar_nga) {
+        $this->modifikuar_nga = $modifikuar_nga;
+    }
    
-    public function getShtuarNe() {
-        return $this->shtuar_ne;
-    }
-
-    public function setShtuarNe($shtuar_ne) {
-        $this->shtuar_ne = $shtuar_ne;
-    }
-
   
     public function addProduct() {
         try {
@@ -90,8 +97,8 @@ class AddProducts extends KonektimimeDB {
                 return;
             }
 
-            $stmt = $this->dbconn->prepare("INSERT INTO produktet (foto, modeli, pershkrimi, cmimi, shtuar_nga, shtuar_ne) 
-                                            VALUES (:foto, :modeli, :pershkrimi, :cmimi, :shtuar_nga, :shtuar_ne)");
+            $stmt = $this->dbconn->prepare("INSERT INTO produktet (foto, modeli, pershkrimi, cmimi, shtuar_nga) 
+                                            VALUES (:foto, :modeli, :pershkrimi, :cmimi, :shtuar_nga)");
             
        
             $stmt->bindParam(':foto', $this->foto);
@@ -99,7 +106,7 @@ class AddProducts extends KonektimimeDB {
             $stmt->bindParam(':pershkrimi', $this->pershkrimi);
             $stmt->bindParam(':cmimi', $this->cmimi);
             $stmt->bindParam(':shtuar_nga', $this->shtuar_nga);
-            $stmt->bindParam(':shtuar_ne', $this->shtuar_ne);
+          
             
           
             $stmt->execute();
@@ -116,7 +123,7 @@ class AddProducts extends KonektimimeDB {
     //metoda per me i shfaqe produktet
 
     public function shfaqTedhenat(){
-        $sql = "SELECT foto, modeli, pershkrimi, cmimi, shtuar_nga FROM
+        $sql = "SELECT id, foto, modeli, pershkrimi, cmimi, shtuar_nga, modifikuar_nga FROM
         produktet";
 
         $stm = $this->dbconn->prepare($sql);
@@ -125,7 +132,60 @@ class AddProducts extends KonektimimeDB {
         $rezultati = $stm->fetchAll(PDO::FETCH_ASSOC);
         return $rezultati;
     }
+
+    //metoda me fshi Produkte:
+
+    public function delProducts($id){
+
+        $sql=  "DELETE FROM produktet where id=:id";
+
+        $stm = $this->dbconn->prepare($sql);
+        $stm->bindParam(':id',$id);
+        $stm->execute();
+
+        if($stm==true){
+            echo"<script>
+            alert('Produkti me id $id eshte Fshire me Sukses!');
+            document.location='adminProducts.php';
+            </script>";
+        }
+        else{
+            return false;
+        }
+    }
+
+    //metoda Update Per produktet: 
+
+
+    public function lexoProduktetSipasID($id){
+
+        $sql="SELECT * FROM produktet WHERE id=:id";
+
+        $stm = $this->dbconn->prepare($sql);
+        $stm->execute([':id'=> $id]);
+
+        $rezultati = $stm->fetch(PDO::FETCH_ASSOC);
+        return $rezultati;
+    }
+
+    public function ndryshoProdukt($id) {
+        $sql = "UPDATE produktet 
+                SET foto = :foto, modeli = :modeli, pershkrimi = :pershkrimi, cmimi = :cmimi, modifikuar_nga = :modifikuar_nga 
+                WHERE id = :id";
+    
+        $stm = $this->dbconn->prepare($sql);
+        $stm->bindParam(':foto', $this->foto);
+        $stm->bindParam(':modeli', $this->modeli);
+        $stm->bindParam(':pershkrimi', $this->pershkrimi);
+        $stm->bindParam(':cmimi', $this->cmimi);
+        $stm->bindParam(':modifikuar_nga', $this->modifikuar_nga);
+        $stm->bindParam(':id', $id);
+        $stm->execute();
+    }
+    
 }
+
+//shtimi i produkteve:
 
 if (isset($_POST['save'])) {
     
@@ -137,9 +197,11 @@ if (isset($_POST['save'])) {
     $product->setPershkrimi($_POST['pershkrimi']);
     $product->setCmimi($_POST['cmimi']);
     $product->setShtuarNga($_POST['shtuar_nga']);
-    $product->setShtuarNe($_POST['shtuar_ne']);
-   
+  
+
     $product->addProduct();
 }
+
+
 
 ?>
