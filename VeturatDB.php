@@ -10,25 +10,6 @@ class VeturatDB {
     }
 
     public function shtoVeturat($veturat) {
-
-        $sql = "INSERT IGNORE INTO Veturat (emri, motorri, horsepower, shpejtesia, pershpejtimi, transmission, konsuminaftes, price, description)
-                VALUES (:emri, :motorri, :horsepower, :shpejtesia, :pershpejtimi, :transmission, :konsuminaftes, :price, :description)";
-
-        $stmt = $this->dbconn->prepare($sql);
-        foreach ($veturat as $vetura) {
-            $stmt->execute([
-                ':emri' => $vetura['emri'],
-                ':motorri' => $vetura['motorri'],
-                ':horsepower' => $vetura['horsepower'],
-                ':shpejtesia' => $vetura['shpejtesia'],
-                ':pershpejtimi' => $vetura['pershpejtimi'],
-                ':transmission' => $vetura['transmission'],
-                ':konsuminaftes' => $vetura['konsuminaftes'],
-                ':price' => (float)$vetura['price'],
-                ':description' => $vetura['description']
-            ]);
-        }
-    
         $sql = "INSERT IGNORE INTO Veturat 
                 (emri, motorri, horsepower, shpejtesia, pershpejtimi, transmission, konsuminaftes, komoditeti, materialet_brenda, price, description)
                 VALUES 

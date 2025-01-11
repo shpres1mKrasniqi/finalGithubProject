@@ -887,7 +887,7 @@ Teknologjia e përparuar e autopilotit e bën atë të dallohet në luksin e tij
 
 ];
 
-$veturatDB->shtoVeturat($veturat);
+
 
 
 $veturatDB->perditesoVeturat('Aventador', [
