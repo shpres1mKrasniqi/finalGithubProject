@@ -9,10 +9,6 @@ class VeturatDB {
         $this->dbconn = ConnectDB::getInstance()->getConnection();
     }
 
-<<<<<<< HEAD
-    
-    public function shtoVeturat(array $veturat) {
-=======
     public function shtoVeturat($veturat) {
 
         $sql = "INSERT IGNORE INTO Veturat (emri, motorri, horsepower, shpejtesia, pershpejtimi, transmission, konsuminaftes, price, description)
@@ -33,7 +29,6 @@ class VeturatDB {
             ]);
         }
     
->>>>>>> bc142e949dbc0c3e0080c85886be983c5fad1135
         $sql = "INSERT IGNORE INTO Veturat 
                 (emri, motorri, horsepower, shpejtesia, pershpejtimi, transmission, konsuminaftes, komoditeti, materialet_brenda, price, description)
                 VALUES 
@@ -57,22 +52,9 @@ class VeturatDB {
             ]);
         }
     }
-<<<<<<< HEAD
-=======
-    public function perditesoVeturat($emri, $data) {
-        $fields = [];
-        $values = [];
-        foreach ($data as $key => $value) {
-            $fields[] = "$key = :$key";
-            $values[":$key"] = $value;
-        }
-        $values[':emri'] = $emri;
 
-        $sql = "UPDATE Veturat SET " . implode(', ', $fields) . " WHERE emri = :emri";
-        $stmt = $this->dbconn->prepare($sql);
-        return $stmt->execute($values);
-    }
->>>>>>> bc142e949dbc0c3e0080c85886be983c5fad1135
+
+
 
    
     public function merrVeturat() {
