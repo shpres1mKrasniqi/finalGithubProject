@@ -1,5 +1,5 @@
 <?php
-include 'loginconnect.php'; 
+include 'loginverify.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
 
 
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");
+    $stmt = $pdo->prepare("SELECT * FROM perdoruesit WHERE email = :email");
     $stmt->bindParam(':email', $email);
     $stmt->execute();
 
