@@ -4,7 +4,7 @@ class ConnectDB {
     private $connection;
 
     private $host = 'localhost';
-    private $dbname = 'srf_autocenter';
+    private $dbname='dbname';
     private $username = 'root';
     private $password = '';
 

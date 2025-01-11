@@ -74,54 +74,60 @@ class SignupForma extends KonektimimeDB{
         $this->confirmPaswordi=$confirmPaswordi;
     }
 
-    public function regjistrimi(){
-        if(empty($this->emri) || empty($this->mbiemri) || empty($this->emaili) || empty($this->paswordi) || empty($this->confirmPaswordi)){
-            return "Te gjitha fushat jane te detyrueshme!";
+    public function regjistrimi() {
+        if (empty($this->emri) || empty($this->mbiemri) || empty($this->emaili) || empty($this->paswordi) || empty($this->confirmPaswordi)) {
+            return "Te gjitha fushat jan te detyrueshme!";
         }
     
-        if(!filter_var($this->emaili, FILTER_VALIDATE_EMAIL)){
-            return "Emaili juaj eshte INVALID";
+
+        if (!filter_var($this->emaili, FILTER_VALIDATE_EMAIL)) {
+            return "Email-i juaj eshte GABIM!";
         }
     
-        if($this->paswordi !== $this->confirmPaswordi){
-            return "Paswordat nuk perputhen!";
+        
+        if ($this->paswordi !== $this->confirmPaswordi) {
+            return "Passwordat nuk perputhen!";
         }
     
-        if(strlen($this->paswordi) < 6){
-            return "Password duhet te kete min.6 Karaktere!";
+       
+        if (strlen($this->paswordi) < 6) {
+            return "Passwordi duhet te kete se paku 6 karaktere!";
         }
     
-    
+        
         $sqlCheck = "SELECT * FROM perdoruesit WHERE emaili = :emaili";
         $stmt = $this->dbconn->prepare($sqlCheck);
         $stmt->bindParam(':emaili', $this->emaili);
         $stmt->execute();
     
-        if($stmt->rowCount() > 0){
-            
+        if ($stmt->rowCount() > 0) {
             echo"<script>
-                    alert('Emaili tashme Ekziston, Shkruaj nje tjeter!');
-                    document.location='signup.php';
-                    </script>";
+            alert('Email-i  ekziston! Ju lutem perdorni nje email tjeter!');
+            document.location='signup.php';
+            </script>";
+            return "Email-i  ekziston! Ju lutem perdorni nje email tjeter.";
         }
     
-     
-        $hashiratjaePassit = password_hash($this->paswordi, PASSWORD_DEFAULT);
-        $sql = "INSERT INTO perdoruesit (emri, mbiemri, emaili, paswordi) VALUES (:emri, :mbiemri, :emaili, :paswordi)";
-        $stmt = $this->dbconn->prepare($sql);
-    
+       
+        $hashedPassword = password_hash($this->paswordi, PASSWORD_DEFAULT); 
+        $sqlInsert = "INSERT INTO perdoruesit (emri, mbiemri, emaili, paswordi) VALUES (:emri, :mbiemri, :emaili, :paswordi)";
+        $stmt = $this->dbconn->prepare($sqlInsert);
         $stmt->bindParam(':emri', $this->emri);
         $stmt->bindParam(':mbiemri', $this->mbiemri);
         $stmt->bindParam(':emaili', $this->emaili);
-        $stmt->bindParam(':paswordi', $hashiratjaePassit);
+        $stmt->bindParam(':paswordi', $hashedPassword);
     
-        if($stmt->execute()){
-            header("Location: Home.html");
-            exit();
+        if ($stmt->execute()) {
+
+            setcookie("emri", $this->emri, time() +(86400* 30), "/");
+
+            header("Location: index.php");
+           exit();
         } else {
-            return "Ka ndodhur një gabim gjatë regjistrimit!";
+            return "GABIM. Ju lutem provoni perseri.";
         }
     }
+    
     
 //metoda me lexu perdorusit nga DB: 
 
@@ -189,6 +195,35 @@ public function fshijUserat($id){
          $rezultati = $stmt->fetch(PDO::FETCH_ASSOC);
        return $rezultati['new_users'] ?? 0;
     }
+
+
+    //Numrimi i adminave
+
+    public function adminatNumri(){
+        $sql="SELECT COUNT(*) AS admin_userat FROM admins";
+
+        $stmt = $this->dbconn->prepare($sql);
+        $stmt->execute();
+
+        $rezultati = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $rezultati['admin_userat'] ?? 0;
+    }
+
+
+    //Numerimi i produkteve ne Autosallon: 
+
+
+    public function numeroProduktet(){
+        $sql = "SELECT COUNT(*) as produktet FROM produktet";
+
+        $stm = $this->dbconn->prepare($sql);
+
+        $stm->execute();
+
+        $rez = $stm->fetch(PDO::FETCH_ASSOC);
+        return $rez['produktet']?? 0;
+    }
+    
 }
 
 

@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; 
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+}
+
+
+#formulari {
+    max-width: 600px;
+    width: 100%; 
+    background: linear-gradient(150deg, navy, blue);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    text-align: center;
+}
+
+
+#formulari h3 {
+    text-align: center;
+    color: #ffff; 
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+
+label {
+    font-size: 16px;
+    color: #ffff;
+    margin-bottom: 5px;
+    display: block;
+}
+
+
+
+.inp {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.inp:focus {
+    outline: none;
+}
+
+
+
+button {
+    background-color: navy; 
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 80%;
+    margin-bottom: 15px;
+}
+
+button:hover {
+    background-color: #254766;
+}
+
+
+@media (max-width: 768px) {
+    #formulari {
+        padding: 15px;
+    }
+
+    #formulari h3 {
+        font-size: 20px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    .inp {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    #formulari {
+        width: 90%;
+        padding: 10px;
+    }
+
+    #formulari h3 {
+        font-size: 18px;
+    }
+
+    .inp {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
+
+input.error::placeholder{
+    color: red;
+
+}
+
+input.error{
+    border:1px solid red;
+}

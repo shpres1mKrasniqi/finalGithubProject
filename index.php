@@ -1,9 +1,22 @@
+<?php
+require_once('regjistri.php');
+
+
+if (isset($_COOKIE['emri'])) {
+
+    $emri = htmlspecialchars($_COOKIE['emri']);
+    echo "<script>
+    alert('Mire se vini, $emri');
+</script>";
+} 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Main Page</title>
     <link rel="stylesheet" href="home.css">
 </head>
 <body>
