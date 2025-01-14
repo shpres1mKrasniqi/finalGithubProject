@@ -1,32 +1,3 @@
-<?php
-include 'loginconnect.php'; 
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");
-    $stmt->bindParam(':email', $email);
-    $stmt->execute();
-
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if ($user && password_verify($password, $user['password'])) {
-     
-        session_start();
-        $_SESSION['user_id'] = $user['id'];
-        header("Location: Home.html");
-        exit();
-    } else {
-        
-        echo "Email ose fjalëkalimi gabim!";
-    }
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <main>
     <div class="formcontaineri">
-    <form action="login.php" method="POST" id="form">
+    <form action="loginVerify.php" method="POST" id="form">
        
             <div class="h2">
                 <h2>Login</h2>
@@ -66,10 +37,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
     
             <div class="pasi">
-                <input type="password" name ="password" placeholder="Password" id="pasiiUser">
+                <input type="password" name="password" placeholder="Password" id="pasiiUser">
             </div>
             <div class="dont">
-                <p>Don't have an email? <a href="signup.html">SignUp</a></p>
+                <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
             </div>
            
                 <button type="submit" class="btn">Login</button>
@@ -78,7 +49,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
 </main>
 
-<!--Defer dmth masi t bohet load faqja kjo aktivizohet-->
 <script defer src="logValidimi.js"></script>
 </body>
 </html>
