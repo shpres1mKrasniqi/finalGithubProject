@@ -24,8 +24,10 @@ $veturat = [
         'pershpejtimi' => '0-100 km/h: Rreth 3.1 sekonda',
         'transmission' => 'Automatik',
         'konsuminaftes' => '13-14 litra për 100km',
+
         'komoditeti'=>'',
         'materialet_brenda'=>'',
+
         'price' => '180000',
         'description' => 'Kategoria: Sportive'
     ],
@@ -884,7 +886,9 @@ Teknologjia e përparuar e autopilotit e bën atë të dallohet në luksin e tij
     ],
 
 ];
-$veturatDB->shtoVeturat($veturat);
+
+
+
 
 $veturatDB->perditesoVeturat('Aventador', [
     'price' => '1000000',
@@ -907,4 +911,13 @@ foreach ($veturat as $vetura) {
     echo "<p>Price: €" . number_format($vetura['price'], 2) . "</p>";
     echo "<p>" . htmlspecialchars($vetura['description']) . "</p><br>";
 }
+//operacioni CRUD i lene ne komente per arsye qe nese e lajm pa komente nuk mund te shohim rezultatin siq duhet ne back end
+//$teGjithaVeturat = $veturatDB->merrVeturat();
+//print_r($teGjithaVeturat);
+
+$vetura = $veturatDB->merrVetura('Aventador');
+print_r($vetura);
+
+// $veturatDB->fshiVetura('Aventador');
+
 ?>
