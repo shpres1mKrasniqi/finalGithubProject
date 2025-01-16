@@ -28,7 +28,7 @@
     <div class="contact-us">
         <div class="contact-container">
             <h2>Na Kontaktoni</h2>
-            <p>Jemi kÃ«tu pÃ«r tÃ« ndihmuar! Na kontaktoni pÃ«r Ã§do pyetje apo sugjerim lidhur me Autosallonin tonÃ«.</p>
+            <p>Jemi ketu per te ndihmuar! Na kontaktoni per cdo pyetje apo sugjerim lidhur me Autosallonin tone.</p>
             <form action="" method="POST" class="contact-form">
                 <div class="form-group">
                     <label for="name">Emri dhe mbiemri juaj</label>
