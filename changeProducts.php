@@ -62,7 +62,7 @@ if (isset($_POST['edit'])) {
             <input type="text" class="inp" name="modeli" id="modeli" value="<?php echo $record['modeli']; ?>" placeholder="Modeli">
 
             <label for="pershkrimi">Pershkrimi</label>
-            <textarea class="inp" name="pershkrimi" id="pershkrimi" placeholder="Pershkrimi" rows="4" required><?php echo $record['pershkrimi']; ?></textarea>
+            <textarea class="inp" name="pershkrimi" id="pershkrimi" placeholder="Pershkrimi" rows="4" ><?php echo $record['pershkrimi']; ?></textarea>
 
             <label for="cmimi">Cmimi</label>
             <input type="text" class="inp" name="cmimi" id="cmimi" value="<?php echo $record['cmimi']; ?>" placeholder="Cmimi">
@@ -73,5 +73,6 @@ if (isset($_POST['edit'])) {
             <button type="submit" name="edit">SAVE</button>
         </form>
     </div>
+    <script defer src="prodValidate.js"></script>
 </body>
 </html>

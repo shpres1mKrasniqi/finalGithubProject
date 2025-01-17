@@ -79,7 +79,7 @@
                    
                 </div>
                 <div class="skeAcc">
-                    <p>Don't have an account? <a href="login.html">Login</a></p>
+                    <p>Don't have an account? <a href="login.php">Login</a></p>
                 </div>
                     <button type="submit" class="btnSignup" name="save">Signup</button>
             </form>

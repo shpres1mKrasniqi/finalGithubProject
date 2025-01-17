@@ -2,7 +2,7 @@
 body{
     margin: 0;
     font-family: sans-serif;
-    background: rgb(184, 222, 255);
+    background: #00CCFF;
 
 
 }
@@ -97,6 +97,7 @@ button{
     margin-top: 5px;
     border-radius: 20px;
     margin-bottom: 30px;
+    box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.3);
 }
 
 button:hover{
@@ -308,9 +309,12 @@ opacity: 1;
 }
 #d{
     background-color: rgb(255, 0, 0);
+    box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.3);
 }
 #d:hover{
     background-color: rgb(205, 23, 23);
+
+
 }
 
 /* rregullimi i slider*/
@@ -349,10 +353,10 @@ opacity: 1;
     top: 50%;
     height: 50px;
     width: 50px;
-    color: #fff;
+    color: #000000;
     border: none;
     outline: none;
-    background: navy;
+    background: rgb(255, 255, 255);
     font-size: 20px;
     cursor: pointer;
     border-radius: 50%;
@@ -361,6 +365,7 @@ opacity: 1;
 
 .slider .slide-button:hover{
     background: black;
+    color: red;
 }
 
 .slider .slide-button#prev-slide{
@@ -415,3 +420,52 @@ display: none;
     }
 }
 
+.view-audiA5 {
+    padding: 20px;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    border-radius: 30px;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.3s ease-in-out;
+}
+
+.view-audiA5::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg,  #fffb00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background-size: 400%;
+    filter: blur(8px);
+    z-index: -1;
+    transition: opacity 0.3s ease-in-out;
+    animation: glowing-rainbow 6s linear infinite;
+}
+
+@keyframes glowing-rainbow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.view-audiA5:hover {
+    color: #000;
+}
+
+.view-audiA5:hover::before {
+    opacity: 1;
+}

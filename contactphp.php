@@ -67,7 +67,7 @@ class ContactUsPHP extends KonektimimeDB {
 
             
             echo "<script>
-                    alert('Te dhenat jane Regjistruar me sukses');
+                    alert('Mesazhi eshte derguar me sukses');
                     document.location='lexoMesazhet.php';
                   </script>";
         } catch (PDOException $e) {
