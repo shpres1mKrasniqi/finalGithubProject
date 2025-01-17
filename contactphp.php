@@ -67,8 +67,13 @@ class ContactUsPHP extends KonektimimeDB {
 
             
             echo "<script>
+<<<<<<< HEAD
                     alert('Mesazhi eshte derguar me sukses');
                     document.location='lexoMesazhet.php';
+=======
+                    alert('Te dhenat jane Regjistruar me sukses');
+                    document.location='index.php';
+>>>>>>> d4ac464fe2e304275f9b9dc0279b740da90a58d0
                   </script>";
         } catch (PDOException $e) {
             
@@ -87,7 +92,7 @@ class ContactUsPHP extends KonektimimeDB {
             $rezultati = $stm->fetchAll(PDO::FETCH_ASSOC);
             return $rezultati; 
         } catch (PDOException $e) {
-            echo "Gabim nÃ« leximin e mesazhit: " . $e->getMessage();
+            echo "Gabim ne leximin e mesazhit: " . $e->getMessage();
         }
     }
     

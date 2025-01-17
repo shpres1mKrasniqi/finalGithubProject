@@ -38,7 +38,7 @@ if (!isset($_SESSION['admin_id'])) {
 
 </a>
         <tr>
-        <th>FistName</th>
+        <th>FirstName</th>
         <th>LastName</th>
         <th>Email</th>
         <th>Actions</th>
