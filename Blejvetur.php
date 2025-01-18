@@ -39,8 +39,6 @@ class Blejvetur extends KonektimimeDB {
                 } catch (PDOException $e) {
                     echo "Error: " . $e->getMessage();
                 }
-            } else {
-                echo "<script>alert('Ju lutemi plotesoni te gjitha fushat!');</script>";
             }
         }
     }
