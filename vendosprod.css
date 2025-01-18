@@ -14,7 +14,7 @@ body {
 #formulari {
     max-width: 600px;
     width: 100%; 
-    background: linear-gradient(150deg, rgb(132, 132, 224), blue);
+    background: #00CCFF;
     padding: 20px;
     border-radius: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -124,3 +124,5 @@ input.error::placeholder{
 input.error{
     border:1px solid red;
 }
+
+

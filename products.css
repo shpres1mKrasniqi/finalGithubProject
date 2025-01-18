@@ -420,7 +420,7 @@ display: none;
     }
 }
 
-.view-audiA5 {
+.buy {
     padding: 20px;
     border: none;
     outline: none;
@@ -435,7 +435,7 @@ display: none;
     transition: color 0.3s ease-in-out;
 }
 
-.view-audiA5::before {
+.buy::before {
     content: "";
     position: absolute;
     top: -50%;
@@ -462,10 +462,10 @@ display: none;
     }
 }
 
-.view-audiA5:hover {
+.buy-audiA5:hover {
     color: #000;
 }
 
-.view-audiA5:hover::before {
+.buy:hover::before {
     opacity: 1;
 }

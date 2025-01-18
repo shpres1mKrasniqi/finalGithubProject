@@ -70,6 +70,11 @@
         <p>Shtuar nga admin: <?php echo $value['shtuar_nga']; ?></p>
         <p>Modifikuar nga admin: <?php echo $value ['modifikuar_nga']?></p>   
         <button class="view-audiA5" onclick="window.location.href='Details.html'">VIEW DETAILS</button>
+        <form action="buy.php" method="get">
+            <input type="hidden" name="id" value="<?php echo $value['id'];?>">
+        <button class="buy" onclick="window.location.href='buy.php'">BUY</button>
+        </form>
+        
         
 </a>
 

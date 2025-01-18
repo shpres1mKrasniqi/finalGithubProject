@@ -38,7 +38,7 @@ require_once('addProducts.php');
                 <label for="shtuar_nga">Shtuar Nga</label>
                 <input type="text" class="inp" name="shtuar_nga" id="shtuar_nga" placeholder="Shtuar nga" readonly value="<?php echo $_SESSION['admin_id']; ?>"/>
 
-                <button type="submit" name="save">SAVE</button>
+                <button type="submit" name="blej">SAVE</button>
             </form>
         </div>
         <script defer src="prodValidate.js"></script>
