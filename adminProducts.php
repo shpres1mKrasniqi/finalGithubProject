@@ -16,7 +16,7 @@ require_once('addProducts.php');
 
 $datat = new SignupForma();
 $tedhenat = new AddProducts();
-$allTeDhenat = $tedhenat->shfaqTedhenat();
+$allTeDhenat = $tedhenat->shfaqProduktet();
 ?>
 
 
@@ -41,7 +41,7 @@ $allTeDhenat = $tedhenat->shfaqTedhenat();
         </div>
          <ul id="listaemenus">
              <li><a href="leximiUserave.php">Users</a></li>
-             <li><a href="News.html">Add News</a></li>
+             <li><a href="shtoLajme.php">Add News</a></li>
              <li><a href="shtoProdukte.php">Add Products</a></li>
          </ul>
          <div class="menuIcon">

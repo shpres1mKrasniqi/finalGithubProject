@@ -4,7 +4,7 @@
 
     $tedhenat = new AddProducts();
 
-    $allTeDhenat = $tedhenat->shfaqTedhenat();
+    $allTeDhenat = $tedhenat->shfaqProduktet();
 ?>
 
 <!DOCTYPE html>
@@ -28,8 +28,9 @@
         </div>
          <ul id="listaemenus">
              <li><a href="aboutUs.html">About Us</a></li>
-             <li><a href="Home.html">Home</a></li>
-             <li><a href="contactus.html">Contact Us</a></li>
+             <li><a href="index.php">Home</a></li>
+             <li><a href="ContactUs.php">Contact Us</a></li>
+
          </ul>
          <div class="menuIcon">
 

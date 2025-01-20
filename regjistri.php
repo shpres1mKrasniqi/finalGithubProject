@@ -157,7 +157,7 @@ class SignupForma extends KonektimimeDB {
 
     
     public function userateRi() {
-        $sql = "SELECT COUNT(*) AS new_users FROM perdoruesit WHERE DATE(created_at) = CURDATE()";
+        $sql = "SELECT COUNT(*) AS new_users FROM perdoruesit";
         $stmt = $this->dbconn->prepare($sql);
         $stmt->execute();
         $rezultati = $stmt->fetch(PDO::FETCH_ASSOC);

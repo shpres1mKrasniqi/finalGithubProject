@@ -1,207 +1,184 @@
 <?php
 
-require_once('KonektimimeDB.php');  
+require_once('KonektimimeDB.php');
 
-class AddProducts extends KonektimimeDB {
-    
+class AddProducts extends KonektimimeDB{
     private $id;
-    private $modeli;
     private $foto;
+    private $modeli;
+    
     private $pershkrimi;
     private $cmimi;
     private $shtuar_nga;
     private $modifikuar_nga;
+    
     private $dbconn;
 
-    public function __construct($id='', $modeli='', $foto='', $pershkrimi='', $cmimi='', $shtuar_nga='', $modifikuar_nga='') {
+    public function __construct($id='', $foto='', $modeli='', $pershkrimi='', $cmimi='', $shtuar_nga='', $modifikuar_nga=''){
         $this->id = $id;
-        $this->modeli = $modeli;
         $this->foto = $foto;
-        $this->pershkrimi = $pershkrimi;
+        $this->modeli = $modeli;
+        $this->pershkrimi=$pershkrimi;
         $this->cmimi = $cmimi;
         $this->shtuar_nga = $shtuar_nga;
         $this->modifikuar_nga = $modifikuar_nga;
-      
-        $this->dbconn = $this->connectDB();  
+        $this->dbconn=$this->connectDB();
     }
 
     public function getID(){
         return $this->id;
     }
-
-    public function setID($id){
-        $this->id=$id;
-    }
-
-    public function getFoto() {
+    public function get_foto(){
         return $this->foto;
+
     }
-
-    public function setFoto($foto) {
-        $this->foto = $foto;
-    }
-
-
-    public function getModeli() {
+    public function get_modeli(){
         return $this->modeli;
     }
-
-    public function setModeli($modeli) {
-        $this->modeli = $modeli;
-    }
-
-    
-    public function getPershkrimi() {
+    public function get_pershkrimi(){
         return $this->pershkrimi;
     }
-
-    public function setPershkrimi($pershkrimi) {
-        $this->pershkrimi = $pershkrimi;
-    }
-
-   
-    public function getCmimi() {
+    public function get_cmimi(){
         return $this->cmimi;
     }
-
-    public function setCmimi($cmimi) {
-        $this->cmimi = $cmimi;
-    }
-
-    
-    public function getShtuarNga() {
+    public function get_shtuar_nga(){
         return $this->shtuar_nga;
     }
-
-    public function setShtuarNga($shtuar_nga) {
-        $this->shtuar_nga = $shtuar_nga;
-    }
-
-    public function getModifikuarNga() {
+    public function get_modifikuar_nga(){
         return $this->modifikuar_nga;
-    }
 
-    public function setModifikuarNga($modifikuar_nga) {
-        $this->modifikuar_nga = $modifikuar_nga;
     }
-   
-  
-    public function addProduct() {
-        try {
-            
-            session_start();
-            if (isset($_SESSION['admin_id'])) {
-                $this->shtuar_nga = $_SESSION['admin_id'];  
-            } else {
-                echo "Duhet të jeni të loguar si admin për të shtuar produkte.";
-                return;
+    
+    public function setID( $id ){
+        $this->id = $id;
+
+    }
+    public function set_foto( $foto ){
+        $this->foto = $foto;
+
+    }
+    public function set_modeli( $modeli ){
+        $this->modeli = $modeli;
+    }
+    public function set_pershkrimi(
+        $pershkrimi){
+            $this->pershkrimi=$pershkrimi;
+
+        }
+        public function set_cmimi(
+            $cmimi){    
+
+                $this->cmimi = $cmimi;
+
             }
 
-            $stmt = $this->dbconn->prepare("INSERT INTO produktet (foto, modeli, pershkrimi, cmimi, shtuar_nga) 
-                                            VALUES (:foto, :modeli, :pershkrimi, :cmimi, :shtuar_nga)");
+            public function set_shtuar_nga(
+                $shtuar_nga){
+                    $this->shtuar_nga = $shtuar_nga;
+                }
+
+            public function set_modifikuar_nga(
+                $modifikuar_nga){   
+                    $this->modifikuar_nga = $modifikuar_nga;    
+
+                }
+
+                public function shtoProdukte(){
+                    try{
+                        session_start();
+                        if (isset($_SESSION['admin_id'])) {
+                            $this->shtuar_nga = $_SESSION['admin_id'];
+                        } else {
+                            echo "Duhet te jeni te loguar si admin per te shtuar Produkte.";
+                            return;
+                        }
             
-       
-            $stmt->bindParam(':foto', $this->foto);
-            $stmt->bindParam(':modeli', $this->modeli);
-            $stmt->bindParam(':pershkrimi', $this->pershkrimi);
-            $stmt->bindParam(':cmimi', $this->cmimi);
-            $stmt->bindParam(':shtuar_nga', $this->shtuar_nga);
-          
+                        $stm= $this->dbconn->prepare("INSERT INTO produktet(foto, modeli, pershkrimi, cmimi, shtuar_nga)
+                        values(:foto, :modeli, :pershkrimi, :cmimi, :shtuar_nga)") ;
+                        $stm->bindParam(':foto', $this->foto);
+                        $stm->bindParam(':modeli',$this->modeli);
+                        $stm->bindParam(':pershkrimi',$this->pershkrimi);
+                        $stm->bindParam(':cmimi',$this->cmimi);
+                        $stm->bindParam(':shtuar_nga',$this->shtuar_nga);
+                        $stm->execute();
+                        echo "<script>
+                        alert('Produkti u shtua me sukses!');
+                        document.location='shtoProdukte.php';
+                        </script>";
+                    }
+
+                    catch(Exception $e){
+                        die('Gabim: '. $e->getMessage());
+                    }
+                }
+
+                public function shfaqProduktet(){
+                    $sql = "SELECT  id, foto, modeli, pershkrimi, cmimi, shtuar_nga, modifikuar_nga from produktet";
+                    $stm = $this->dbconn->prepare($sql);
+                    $stm->execute();
             
-          
-            $stmt->execute();
-            echo"<script>
-        alert('Te dhenat jane Vendos me Sukses!');
-        document.location='shtoProdukte.php';
-        </script>";
+                    $rezultati = $stm->fetchAll(PDO::FETCH_ASSOC);
+                    return $rezultati;
+                }
 
-        } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
-        }
-    }
-
-    //metoda per me i shfaqe produktet
-
-    public function shfaqTedhenat(){
-        $sql = "SELECT id, foto, modeli, pershkrimi, cmimi, shtuar_nga, modifikuar_nga FROM
-        produktet";
-
-        $stm = $this->dbconn->prepare($sql);
-        $stm->execute();
-
-        $rezultati = $stm->fetchAll(PDO::FETCH_ASSOC);
-        return $rezultati;
-    }
-
-    //metoda me fshi Produkte:
-
+    
     public function delProducts($id){
-
-        $sql=  "DELETE FROM produktet where id=:id";
-
+        $sql = "DELETE from produktet where id=:id";
         $stm = $this->dbconn->prepare($sql);
-        $stm->bindParam(':id',$id);
+        $stm->bindParam(':id', $id);
         $stm->execute();
 
-        if($stm==true){
-            echo"<script>
-            alert('Produkti me id $id eshte Fshire me Sukses!');
+        if ($stm == true) {
+            echo "<script>
+            alert('Produkti me ID $id u fshi me sukses!');
             document.location='adminProducts.php';
             </script>";
-        }
-        else{
+        } else {
             return false;
         }
     }
 
-    //metoda Update Per produktet: 
-
-
-    public function lexoProduktetSipasID($id){
-
-        $sql="SELECT * FROM produktet WHERE id=:id";
-
+    public function lexoProdukteSipasId($id){
+        $sql = "SELECT * FROM produktet where id=:id";
         $stm = $this->dbconn->prepare($sql);
-        $stm->execute([':id'=> $id]);
+        $stm->execute([':id'=>$id]);
 
         $rezultati = $stm->fetch(PDO::FETCH_ASSOC);
         return $rezultati;
     }
 
-    public function ndryshoProdukt($id) {
+    public function ndryshoProduktin($id) {
         $sql = "UPDATE produktet 
-                SET foto = :foto, modeli = :modeli, pershkrimi = :pershkrimi, cmimi = :cmimi, modifikuar_nga = :modifikuar_nga 
+                SET foto = :foto, 
+                    modeli = :modeli, 
+                    pershkrimi = :pershkrimi, 
+                    cmimi = :cmimi, 
+                    modifikuar_nga = :modifikuar_nga
                 WHERE id = :id";
     
         $stm = $this->dbconn->prepare($sql);
+    
         $stm->bindParam(':foto', $this->foto);
         $stm->bindParam(':modeli', $this->modeli);
         $stm->bindParam(':pershkrimi', $this->pershkrimi);
-        $stm->bindParam(':cmimi', $this->cmimi);
+        $stm->bindParam(':cmimi', $this->cmimi); 
         $stm->bindParam(':modifikuar_nga', $this->modifikuar_nga);
-        $stm->bindParam(':id', $id);
+        $stm->bindParam(':id', $id); 
+    
         $stm->execute();
     }
     
 }
 
-//shtimi i produkteve:
+if(isset($_POST['save'])){
+    $producti = new AddProducts();
 
-if (isset($_POST['save'])) {
-    
-    $product = new AddProducts();
-    
-  
-    $product->setFoto($_POST['foto']);
-    $product->setModeli($_POST['modeli']);
-    $product->setPershkrimi($_POST['pershkrimi']);
-    $product->setCmimi($_POST['cmimi']);
-    $product->setShtuarNga($_POST['shtuar_nga']);
-  
-
-    $product->addProduct();
+    $producti->set_foto($_POST['foto']);
+    $producti->set_modeli($_POST['modeli']);
+        $producti->set_pershkrimi($_POST['pershkrimi']);
+        $producti->set_cmimi($_POST['cmimi']);
+ $producti->shtoProdukte();
 }
-
 
 
 ?>

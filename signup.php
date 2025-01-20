@@ -37,8 +37,8 @@
         </div>
          <ul id="listaemenus">
              <li><a href="aboutUs.html">About Us</a></li>
-             <li><a href="loginiAdmin.html">Admin</a></li>
-             <li><a href="contactus.html">Contact Us</a></li>
+             <li><a href="loginiAdmin.php">Admin</a></li>
+             <li><a href="ContactUs.php">Contact Us</a></li>
          </ul>
          <div class="menuIcon">
 

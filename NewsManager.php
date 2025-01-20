@@ -78,7 +78,7 @@ class NewsManager extends KonektimimeDB {
             if (isset($_SESSION['admin_id'])) {
                 $this->shtuar_nga = $_SESSION['admin_id'];
             } else {
-                echo "Duhet te jeni tÃ« loguar si admin pÃ«r tÃ« shtuar lajme.";
+                echo "Duhet te jeni te loguar si admin per te shtuar lajme.";
                 return;
             }
 

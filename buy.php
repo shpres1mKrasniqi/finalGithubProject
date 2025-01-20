@@ -9,7 +9,7 @@ $veturaID = null;
 if (isset($_GET['id'])) {
     $idVetures = $_GET['id'];
 
-    foreach ($tedhenat->shfaqTedhenat() as $value) {    
+    foreach ($tedhenat->shfaqProduktet() as $value) {    
         if ($value['id'] == $idVetures) {
             $veturaID = $value;
             break;
@@ -28,7 +28,7 @@ $blerja->blej();
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="blej.css" />
+    <link rel="stylesheet" href="blej.css"/>
     <title>Blerja e Produkteve</title>
 </head>
 <body>
