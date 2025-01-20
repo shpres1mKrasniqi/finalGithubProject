@@ -172,7 +172,7 @@ class AddProducts extends KonektimimeDB{
 
 if(isset($_POST['save'])){
     $producti = new AddProducts();
-
+    
     $producti->set_foto($_POST['foto']);
     $producti->set_modeli($_POST['modeli']);
         $producti->set_pershkrimi($_POST['pershkrimi']);
