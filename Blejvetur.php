@@ -1,5 +1,5 @@
 <?php
-
+require_once('KonektimimeDB.php');
 class Blejvetur extends KonektimimeDB {
 
     private $vetura_id;
@@ -41,6 +41,15 @@ class Blejvetur extends KonektimimeDB {
                 }
             }
         }
+    }
+
+    public function lexoBlerjet(){
+        $sql = "SELECT  id, vetura_id, emri, mbiemri, nr_karteles, data_blerjes from blejvetura";
+        $stm = $this->dbconn->prepare($sql);
+        $stm->execute();
+
+        $rezultati = $stm->fetchAll(PDO::FETCH_ASSOC);
+        return $rezultati;
     }
 }
 
