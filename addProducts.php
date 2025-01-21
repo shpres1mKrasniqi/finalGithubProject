@@ -92,6 +92,11 @@ class AddProducts extends KonektimimeDB{
                             echo "Duhet te jeni te loguar si admin per te shtuar Produkte.";
                             return;
                         }
+
+                        if (empty($this->foto) || empty($this->modeli) || empty($this->pershkrimi) || empty($this->cmimi)) {
+                            echo "<script>alert('Te gjitha fushat jane te detyrueshme!');</script>";
+                            return;
+                        }
             
                         $stm= $this->dbconn->prepare("INSERT INTO produktet(foto, modeli, pershkrimi, cmimi, shtuar_nga)
                         values(:foto, :modeli, :pershkrimi, :cmimi, :shtuar_nga)") ;
@@ -170,15 +175,13 @@ class AddProducts extends KonektimimeDB{
     
 }
 
-if(isset($_POST['save'])){
-    $producti = new AddProducts();
-    
+if (isset($_POST['foto'], $_POST['modeli'], $_POST['pershkrimi'], $_POST['cmimi'])) {
     $producti->set_foto($_POST['foto']);
     $producti->set_modeli($_POST['modeli']);
-        $producti->set_pershkrimi($_POST['pershkrimi']);
-        $producti->set_cmimi($_POST['cmimi']);
- $producti->shtoProdukte();
-}
+    $producti->set_pershkrimi($_POST['pershkrimi']);
+    $producti->set_cmimi($_POST['cmimi']);
+    $producti->shtoProdukte();
+} 
 
 
 ?>

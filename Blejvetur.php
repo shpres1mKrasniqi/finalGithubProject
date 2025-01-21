@@ -1,5 +1,6 @@
 <?php
-require_once('KonektimimeDB.php');
+
+require_once('addProducts.php');
 class Blejvetur extends KonektimimeDB {
 
     private $vetura_id;
@@ -44,12 +45,13 @@ class Blejvetur extends KonektimimeDB {
     }
 
     public function lexoBlerjet(){
-        $sql = "SELECT  id, vetura_id, emri, mbiemri, nr_karteles, data_blerjes from blejvetura";
-        $stm = $this->dbconn->prepare($sql);
-        $stm->execute();
+        $sql  = "SELECT id, emri, mbiemri, data_blerjes from blejvetura";
 
-        $rezultati = $stm->fetchAll(PDO::FETCH_ASSOC);
-        return $rezultati;
+        $stmt = $this->dbconn->prepare($sql);
+        $stmt->execute();
+            
+                    $rezultati = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    return $rezultati;
     }
 }
 
