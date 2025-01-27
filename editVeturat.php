@@ -9,7 +9,7 @@ if (!isset($_SESSION['admin_id'])) {
 require_once('MenaxhoVeturat.php');
 
 
-$newsManager = new MenaxhoVeturat();
+$menaxhoVeturat = new MenaxhoVeturat();
 
 
 if (!isset($_GET['id'])) {
@@ -21,7 +21,7 @@ if (!isset($_GET['id'])) {
 }
 
 $id = $_GET['id'];
-$record = $newsManager->lexoVeturat($id);
+$record = $menaxhoVeturat->lexoVeturat($id);
 
 if (isset($_POST['edit'])) {
     $titulli = htmlspecialchars(trim($_POST['titulli']));
@@ -34,13 +34,13 @@ if (isset($_POST['edit'])) {
         echo "<script>alert('Te gjitha fushat duhet te plotesohen!');</script>";
     } else {
         
-        $newsManager->setTitulli($titulli);
-        $newsManager->setFoto($foto);
-        $newsManager->setPershkrimi($pershkrimi);
-        $newsManager->setModifikuarNga($modifikuarNga);
+        $menaxhoVeturat->setTitulli($titulli);
+        $menaxhoVeturat->setFoto($foto);
+        $menaxhoVeturat->setPershkrimi($pershkrimi);
+        $menaxhoVeturat->setModifikuarNga($modifikuarNga);
 
         
-        $newsManager->editVeturat($id);
+        $menaxhoVeturat->editVeturat($id);
 
         echo "<script>
             alert('Vetura u editua me sukses!');
