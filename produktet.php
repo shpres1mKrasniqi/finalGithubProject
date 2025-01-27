@@ -68,8 +68,7 @@
         <h3><?php echo $value['modeli']; ?></h3>
         <p><?php echo $value['pershkrimi']; ?></p>
         <h6><?php echo $value['cmimi']; ?></h6>
-        <p>Shtuar nga admin: <?php echo $value['shtuar_nga']; ?></p>
-        <p>Modifikuar nga admin: <?php echo $value ['modifikuar_nga']?></p>   
+         
         <button class="view-audiA5" onclick="window.location.href='Details.html'">VIEW DETAILS</button>
         <form action="buy.php" method="get">
             <input type="hidden" name="id" value="<?php echo $value['id'];?>">
