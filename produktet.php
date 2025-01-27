@@ -4,7 +4,7 @@
 
     $tedhenat = new AddProducts();
 
-    $allTeDhenat = $tedhenat->shfaqTedhenat();
+    $allTeDhenat = $tedhenat->shfaqProduktet();
 ?>
 
 <!DOCTYPE html>
@@ -28,8 +28,9 @@
         </div>
          <ul id="listaemenus">
              <li><a href="aboutUs.html">About Us</a></li>
-             <li><a href="Home.html">Home</a></li>
-             <li><a href="contactus.html">Contact Us</a></li>
+             <li><a href="index.php">Home</a></li>
+             <li><a href="ContactUs.php">Contact Us</a></li>
+
          </ul>
          <div class="menuIcon">
 
@@ -70,6 +71,11 @@
         <p>Shtuar nga admin: <?php echo $value['shtuar_nga']; ?></p>
         <p>Modifikuar nga admin: <?php echo $value ['modifikuar_nga']?></p>   
         <button class="view-audiA5" onclick="window.location.href='Details.html'">VIEW DETAILS</button>
+        <form action="buy.php" method="get">
+            <input type="hidden" name="id" value="<?php echo $value['id'];?>">
+        <button class="buy" onclick="window.location.href='buy.php'">BUY</button>
+        </form>
+        
         
 </a>
 

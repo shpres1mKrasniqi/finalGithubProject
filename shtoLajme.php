@@ -1,5 +1,5 @@
 <?php
-// shtoLajme.php
+
 session_start();
 
 if (!isset($_SESSION['admin_id'])) {
@@ -29,7 +29,7 @@ require_once('NewsManager.php');
             <label for="foto">Foto</label>
             <input type="file" name="foto" id="foto" accept="image/*" required>
 
-            <label for="pershkrimi">PÃ«rshkrimi</label>
+            <label for="pershkrimi">Pershkrimi</label>
             <textarea name="pershkrimi" id="pershkrimi" placeholder="Pershkrimi i lajmit" rows="10" required></textarea>
 
             <button type="submit" name="save">SAVE</button>

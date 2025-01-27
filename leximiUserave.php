@@ -1,5 +1,13 @@
 <?php
 
+session_start();  
+
+
+if (!isset($_SESSION['admin_id'])) {
+    
+    header('Location: loginiAdmin.php'); 
+    exit();  
+}
     require_once('regjistri.php');
 
     $teDhenat = new SignupForma();
@@ -16,6 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users</title>
     <link rel="stylesheet" href="leximi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     
@@ -46,9 +55,9 @@
         <td><?php echo $value['emaili'];?></td>
         <td id="de">
 
-        <a href="delete.php?id=<?php echo $value['id'];?>" onclick="return confirm('A jeni i sigurt qe deshironi te fshini kete produkt?');">
+        <a href="delete.php?id=<?php echo $value['id'];?>" onclick="return confirm('A jeni i sigurt qe deshironi te fshini kete user?');">
 
-        <button id="d">DELETE</button>
+        <button id="d"><i class="fa fa-trash"></i></button>
 
         </a>
 

@@ -16,7 +16,7 @@ require_once('addProducts.php');
 
 $datat = new SignupForma();
 $tedhenat = new AddProducts();
-$allTeDhenat = $tedhenat->shfaqTedhenat();
+$allTeDhenat = $tedhenat->shfaqProduktet();
 ?>
 
 
@@ -41,7 +41,7 @@ $allTeDhenat = $tedhenat->shfaqTedhenat();
         </div>
          <ul id="listaemenus">
              <li><a href="leximiUserave.php">Users</a></li>
-             <li><a href="News.html">Add News</a></li>
+             <li><a href="shtoLajme.php">Add News</a></li>
              <li><a href="shtoProdukte.php">Add Products</a></li>
          </ul>
          <div class="menuIcon">
@@ -83,10 +83,10 @@ $allTeDhenat = $tedhenat->shfaqTedhenat();
         <p>Shtuar nga admin: <?php echo $value['shtuar_nga']; ?></p>
         <p>Modifikuar nga admin: <?php echo $value['modifikuar_nga'];?></p>  
         <a href="delProducts.php?id=<?php echo $value['id']; ?>" onclick="return confirm('A jeni i sigurt qe deshironi te fshini kete produkt?');">
-    <button id="d">DELETE</button>
+    <button id="d"><i class="fas fa-trash"></i></button>
 </a>
 <a href="changeProducts.php?id=<?php echo $value['id']; ?>">
-    <button id="edit">EDIT</button>
+    <button id="edit"><i class="fas fa-edit"></i></button>
 </a>
 
         

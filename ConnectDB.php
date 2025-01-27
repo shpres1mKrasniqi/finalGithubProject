@@ -38,4 +38,8 @@ class ConnectDB {
     public function __wakeup() {}
 }
 
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> 6c3517df2efeaaa4a0c12918f748b40b51303434
