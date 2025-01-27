@@ -3,4 +3,4 @@ SQLSTATE[HY000] [1049] Unknown database 'veturat'could not find drivercould not 
 =======
 could not find driverSQLSTATE[HY000] [1049] Unknown database 'dbname'SQLSTATE[HY000] [1049] Unknown database 'dbname'SQLSTATE[HY000] [1049] Unknown database 'dbname'SQLSTATE[HY000] [1049] Unknown database 'dbname'SQLSTATE[HY000] [1049] Unknown database 'dbname'SQLSTATE[HY000] [1049] Unknown database 'dbname'
 >>>>>>> afec1bcb42f9004bf19e940e28c960c214cd4811
-could not find drivercould not find drivercould not find driver
+could not find drivercould not find drivercould not find driverSQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused itSQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused itSQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused itSQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused itSQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it

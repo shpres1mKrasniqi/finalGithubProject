@@ -5,9 +5,9 @@ if (!isset($_SESSION['admin_id'])) {
     header('Location: loginiAdmin.php');
     exit();
 }
-require_once('contactphp.php');
-$teDhenat = new ContactUsPHP();
-$krejtteDhenat = $teDhenat->lexoMesazhe();
+require_once('Blejvetur.php');
+$teDhenat = new Blejvetur();
+$krejtteDhenat = $teDhenat->lexoBlerjet();
 
 ?>
 
@@ -16,21 +16,20 @@ $krejtteDhenat = $teDhenat->lexoMesazhe();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mesazhet e Perdoruesve</title>
+    <title>Blerjet</title>
     <link rel="stylesheet" href="leximi.css">
 </head>
 <body>
 
 <div class="kontinieri" id="kontinieri" style="overflow-x:auto;">
     <table>
-    <a href="ContactUs.php">
+    <a href="produktet.php">
 
 <button id="bak">BACK</button>
         <tr>
-            <th>Emri dhe Mbiemri</th>
-            <th>Email-i</th>
-            <th>Mesazhi</th>
-            <th>Data dhe Koha</th>
+            <th>Emri i Bleresit</th>
+            <th>Mbiemri</th>
+            <th>Data</th>
         </tr>
 
         <?php
@@ -38,10 +37,9 @@ $krejtteDhenat = $teDhenat->lexoMesazhe();
         foreach($krejtteDhenat as $key=>$value) {
         ?>
         <tr>
-            <td><?php echo $value['emridheMbiemri']; ?></td>
-            <td><?php echo $value['email']; ?></td>
-            <td><?php echo $value['mesazhi']; ?></td>
-            <td><?php echo $value['data_koha']; ?></td>
+            <td><?php echo $value['emri']; ?></td>
+            <td><?php echo $value['mbiemri']; ?></td>
+            <td><?php echo $value['data_blerjes']; ?></td>
         </tr>
         <?php
         }

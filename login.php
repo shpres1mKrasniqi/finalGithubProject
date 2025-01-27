@@ -1,5 +1,5 @@
 <?php
-include 'loginconnect.php'; 
+include 'loginverify.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      
         session_start();
         $_SESSION['user_id'] = $user['id'];
-        header("Location: Home.html");
+        header("Location: index.php");
         exit();
     } else {
         
@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input type="password" name="password" placeholder="Password" id="pasiiUser">
             </div>
             <div class="dont">
-                <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+                <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
             </div>
            
                 <button type="submit" class="btn">Login</button>

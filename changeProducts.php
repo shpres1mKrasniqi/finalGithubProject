@@ -8,31 +8,38 @@ if (!isset($_SESSION['admin_id'])) {
 
 require_once('addProducts.php');
 
-$teDheat = new AddProducts();
+$prod = new AddProducts();
+
+if (!isset($_GET['id'])) {
+    echo "<script>
+        alert('ID e lajmit mungon!');
+        document.location='adminNews.php';
+    </script>";
+    exit();
+}
 
 $id = $_GET['id'];
-$record = $teDheat->lexoProduktetSipasID($id);
+$record = $prod->lexoProdukteSipasId($id);
 
 if (isset($_POST['edit'])) {
-   
-    $foto = htmlspecialchars(trim($_POST['foto']));
     $modeli = htmlspecialchars(trim($_POST['modeli']));
+    $foto = htmlspecialchars(trim($_POST['foto']));
     $pershkrimi = htmlspecialchars(trim($_POST['pershkrimi']));
     $cmimi = htmlspecialchars(trim($_POST['cmimi']));
-    $modifikuarNga = htmlspecialchars($_SESSION['admin_id']); 
+    $modifikuar_nga = htmlspecialchars($_SESSION['admin_id']); 
 
-    if (empty($foto) || empty($modeli) || empty($pershkrimi) || empty($cmimi)) {
+    if (empty($modeli) || empty($pershkrimi) || empty($foto) || empty($cmimi)) {
         echo "<script>alert('Te gjitha fushat duhet te plotesohen!');</script>";
-    }
+    } else {
+    
+        $prod->set_modeli($modeli);
+        $prod->set_foto($foto);
+        $prod->set_pershkrimi($pershkrimi);
+        $prod->set_cmimi($cmimi);
+        $prod->set_modifikuar_nga($modifikuar_nga);
 
- else {
         
-        $teDheat->setFoto($foto);
-        $teDheat->setModeli($modeli);
-        $teDheat->setPershkrimi($pershkrimi);
-        $teDheat->setCmimi($cmimi);
-        $teDheat->setModifikuarNga($modifikuarNga);
-        $teDheat->ndryshoProdukt($id);
+        $prod->ndryshoProduktin($id);
 
         echo "<script>
             alert('Produkti u perditesua me sukses!');
@@ -41,31 +48,30 @@ if (isset($_POST['edit'])) {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="vendosprod.css" />
     <title>Modifikimi i Produkteve</title>
+    <link rel="stylesheet" href="vendosprod.css">
 </head>
 <body>
     <div id="formulari">
         <h3>Modifikimi i Produkteve</h3>
         <form action="" method="POST">
-            <a href="adminLogin.php" style="text-decoration: none;">
-                <button id="back" type="button" onclick="window.location.href='adminLogin.php';">BACK</button>
+            <a href="adminProducts.php" style="text-decoration: none;">
+                <button id="back" type="button" onclick="window.location.href='adminProducts.php';">BACK</button>
             </a>
-            <label for="foto">Foto</label>
-            <input type="text" name="foto" id="foto" value="<?php echo $record['foto']; ?>">
-
             <label for="modeli">Modeli</label>
-            <input type="text" class="inp" name="modeli" id="modeli" value="<?php echo $record['modeli']; ?>" placeholder="Modeli">
+            <input type="text" class="inp" name="modeli" id="modeli" value="<?php echo $record['modeli']; ?>" required>
 
-            <label for="pershkrimi">Pershkrimi</label>
-            <textarea class="inp" name="pershkrimi" id="pershkrimi" placeholder="Pershkrimi" rows="4" required><?php echo $record['pershkrimi']; ?></textarea>
+            <label for="foto">Foto</label>
+            <input type="text" class="inp" name="foto" id="foto" value="<?php echo $record['foto']; ?>" required>
 
-            <label for="cmimi">Cmimi</label>
-            <input type="text" class="inp" name="cmimi" id="cmimi" value="<?php echo $record['cmimi']; ?>" placeholder="Cmimi">
+            <label for="pershkrimi">Përshkrimi</label>
+            <textarea class="inp" name="pershkrimi" id="pershkrimi" rows="4" required><?php echo $record['pershkrimi']; ?></textarea>
+            <label for="cmimi">Cmimi:</label>
+            <input type="number" class="inp" id="cmimi" name="cmimi" placeholder="Cmimi i produktit" value="<?php echo $record['cmimi']; ?>" required><br><br>
+
 
             <label for="modifikuar_nga">Modifikuar Nga</label>
             <input type="text" class="inp" name="modifikuar_nga" id="modifikuar_nga" readonly value="<?php echo $_SESSION['admin_id']; ?>">

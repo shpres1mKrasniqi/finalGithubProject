@@ -34,10 +34,6 @@ class VeturatDB {
         }
     }
 
-
-
-
-   
     public function merrVeturat() {
         $sql = "SELECT * FROM Veturat";
         $stmt = $this->dbconn->query($sql);
