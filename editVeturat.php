@@ -53,7 +53,7 @@ if (isset($_POST['edit'])) {
 <html>
 <head>
     <title>Modifikimi i Veturave</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="editveturat.css">
 </head>
 <body>
     <div id="formulari">
