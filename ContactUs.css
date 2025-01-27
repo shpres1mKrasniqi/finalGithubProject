@@ -88,7 +88,11 @@ body {
     background-color: #000361;
     color: #fff;
 }
-
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 15px;
+    }
+}
 /*Nese do mi kthy ngjyrat qe i ke pas*/
 /*#00ffdd - per buton dhe h2
 #1d4552 - per background te pjesa e inputav edhe backgroundi i bodyt
