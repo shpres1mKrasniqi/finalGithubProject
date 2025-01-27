@@ -14,11 +14,11 @@ require_once('AddProducts.php');
 <html>
 <head>
     <link rel="stylesheet" href="vendosprod.css" />
-    <title>Shto Lajme</title>
+    <title>Shto Produkte</title>
 </head>
 <body>
     <div id="formulari">
-        <h3>Shtimi i Lajmeve</h3>
+        <h3>Shtimi i Produktev</h3>
         <form action="" method="POST">
             <a href="adminLogin.php" style="text-decoration: none;">
                 <button id="back" type="button">BACK</button>
