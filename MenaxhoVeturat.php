@@ -73,7 +73,8 @@ class MenaxhoVeturat extends KonektimimeDB {
 
     public function shtoVeturat() {
         try {
-            session_start();
+                     
+            //session_start();
             if (isset($_SESSION['admin_id'])) {
                 $this->shtuar_nga = $_SESSION['admin_id'];
             } else {
@@ -81,18 +82,19 @@ class MenaxhoVeturat extends KonektimimeDB {
                 return;
             }
 
-            $stmt = $this->dbconn->prepare("INSERT INTO shto (titulli, foto, shtuar_nga,pershkrimi) 
-                                            VALUES (:titulli, :foto,  :shtuar_nga,:pershkrimi,)");
+            $stmt = $this->dbconn->prepare("INSERT INTO shto (titulli, foto, shtuar_nga,modifikuar_nga,pershkrimi) 
+                                            VALUES (:titulli, :foto,  :shtuar_nga, :modifikuar_nga,:pershkrimi)");
 
             $stmt->bindParam(':titulli', $this->titulli);
             $stmt->bindParam(':foto', $this->foto);
             $stmt->bindParam(':shtuar_nga', $this->shtuar_nga);
+            $stmt->bindParam(':modifikuar_nga', $this->modifikuar_nga);
             $stmt->bindParam(':pershkrimi', $this->pershkrimi);
 
             $stmt->execute();
             echo "<script>
             alert('Vetura  u shtua me sukses!');
-            document.location='shtoVetura.php';
+            document.location='adminiVeturave.php';
             </script>";
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
@@ -100,7 +102,7 @@ class MenaxhoVeturat extends KonektimimeDB {
     }
 
     public function shfaqVeturat(){
-        $sql = "SELECT id, titulli, foto,  shtuar_nga, modifikuar_nga,pershkrimi, FROM shto";
+        $sql = "SELECT id, titulli, foto,  shtuar_nga, modifikuar_nga,pershkrimi FROM shto";
 
         $stm = $this->dbconn->prepare($sql);
         $stm->execute();
@@ -138,7 +140,7 @@ class MenaxhoVeturat extends KonektimimeDB {
 
     public function editVeturat($id) {
         $sql = "UPDATE shto 
-                SET titulli = :titulli, foto = :foto, modifikuar_nga = :modifikuar_nga, pershkrimi = :pershkrimi,
+                SET titulli = :titulli, foto = :foto, modifikuar_nga = :modifikuar_nga, pershkrimi = :pershkrimi
                 WHERE id = :id";
 
         $stm = $this->dbconn->prepare($sql);

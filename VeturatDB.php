@@ -30,15 +30,10 @@ class VeturatDB {
                 ':materialet_brenda' => $vetura['materialet_brenda'] ?? null,
                 ':price' => (float) ($vetura['price'] ?? 0),
                 ':description' => $vetura['description'] ?? null,
-              //  ':foto' =>$vetura['foto']?? null,
             ]);
         }
     }
 
-
-
-
-   
     public function merrVeturat() {
         $sql = "SELECT * FROM Veturat";
         $stmt = $this->dbconn->query($sql);
