@@ -36,7 +36,7 @@ $allCars = $menaxhoVeturat->shfaqVeturat();
 </header>
 
 <main>
-    <h2>News List</h2>
+    <h2>New Cars List</h2>
     <div class="news-container">
         <?php foreach ($allCars as $cars): ?>
             <div class="news-item">

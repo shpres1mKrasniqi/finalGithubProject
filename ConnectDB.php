@@ -19,7 +19,7 @@ class ConnectDB {
             $this->connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             error_log($e->getMessage(), 3, 'errors.log');
-            die("Ka ndodhur nje problem me bazen e te dhenave.");
+            die("Ka nje problem me bazen e te dhenave");
         }
     }
 

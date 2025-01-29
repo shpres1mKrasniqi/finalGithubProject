@@ -1,8 +1,8 @@
 <?php
 
 require_once('MenaxhoVeturat.php');
-$newsManager = new MenaxhoVeturat();
-$allNews = $newsManager->shfaqVeturat();
+$menaxhoVeturat = new MenaxhoVeturat();
+$allCars = $menaxhoVeturat->shfaqVeturat();
 ?>
 
 <!DOCTYPE html>
@@ -32,13 +32,13 @@ $allNews = $newsManager->shfaqVeturat();
 <main>
     <h2>Cars List</h2>
     <div class="news-container">
-        <?php foreach ($allNews as $news): ?>
+        <?php foreach ($allCars as $cars): ?>
             <div class="news-item">
-                <img src="./fotot/<?php echo $news['foto']; ?>" alt="News Image">
-                <h3><?php echo $news['titulli']; ?></h3>
-                <p><?php echo $news['pershkrimi']; ?></p>
-                <p>Added by admin: <?php echo $news['shtuar_nga']; ?></p>
-                <p>Modified by admin: <?php echo $news['modifikuar_nga']; ?></p>
+                <img src="./fotot/<?php echo $cars['foto']; ?>" alt="News Image">
+                <h3><?php echo $cars['titulli']; ?></h3>
+                <p><?php echo $cars['pershkrimi']; ?></p>
+                <p>Added by admin: <?php echo $cars['shtuar_nga']; ?></p>
+                <p>Modified by admin: <?php echo $cars['modifikuar_nga']; ?></p>
             </div>
         <?php endforeach; ?>
     </div>
