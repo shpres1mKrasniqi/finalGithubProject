@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 if (!isset($_SESSION['admin_id'])) {
     header('Location: loginiAdmin.php');
@@ -40,6 +42,7 @@ require_once('AddProducts.php');
             <button type="submit" name="save">SAVE</button>
         </form>
     </div>
+    <script defer src="prodValidate.js"></script>
 </body>
 </html>
 

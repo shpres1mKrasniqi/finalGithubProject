@@ -43,10 +43,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save'])) {
             </a>
 
             <label for="emri">Emri:</label>
-            <input type="text" class="inp" name="emri" id="emri" required>
+            <input type="text" class="inp" name="emri" id="emri">
 
             <label for="mbiemri">Mbiemri:</label>
-            <input type="text" class="inp" name="mbiemri" id="mbiemri" required>
+            <input type="text" class="inp" name="mbiemri" id="mbiemri">
             
             <?php if ($veturaID): ?>
                 <label for="cmimi">Cmimi i Vetures:</label>
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save'])) {
             <?php endif; ?>
 
             <label for="kartela">Kodi i Karteles tuaj:</label>
-            <input type="text" class="inp" name="kartela" id="kartela" required>
+            <input type="text" class="inp" name="kartela" id="kartela">
 
             <button type="submit" name="save">BLEJ</button>
         </form>

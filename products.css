@@ -2,7 +2,7 @@
 body{
     margin: 0;
     font-family: sans-serif;
-    background: #00CCFF;
+    background:  #1F75FE;
 
 
 }
@@ -324,7 +324,7 @@ opacity: 1;
     align-items: center; 
     margin-top: 20px; 
     padding: 20px 0; 
-    background-color: #f9f9f9; 
+    background-color:  #1F75FE; 
 }
 
 .slider {

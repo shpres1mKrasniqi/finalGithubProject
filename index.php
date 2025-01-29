@@ -24,7 +24,7 @@ if (isset($_COOKIE['emri'])) {
     <div class="navbar">  
         <div class="h1"><h1>SRF AutoCenter </h1></div>
         <div class="links">
-        <a href="AboutUs.html">About Us</a>
+        <a href="about.php">About Us</a>
         <a href="lexoLajme.php">News</a>
         <a href="produktet.php">Products</a>
         <a href="Details.html">Details</a>

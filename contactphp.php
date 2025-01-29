@@ -52,6 +52,20 @@ class ContactUsPHP extends KonektimimeDB {
    
     public function shtoMesazh() {
         try {
+            if (empty($this->emridheMbiemri) || empty($this->email) || empty($this->mesazhi)) {
+               
+                return"Ploteso te gjitha fushat!";
+            }
+    
+            
+            if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
+                echo "<script>
+                        alert('Ju lutem jepni email t vlefshem.');
+                        document.location='ContactUs.php'; 
+                      </script>";
+                return;
+            }
+            
             $sql = "INSERT INTO kontakt (emridheMbiemri, email, mesazhi)
                     VALUES (:emridheMbiemri, :email, :mesazhi)";
             

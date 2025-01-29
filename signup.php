@@ -36,7 +36,7 @@
          <h1>SRF AutoCenter</h1>
         </div>
          <ul id="listaemenus">
-             <li><a href="aboutUs.html">About Us</a></li>
+         <li><a href="about.php">About Us</a></li>
              <li><a href="loginiAdmin.php">Admin</a></li>
              <li><a href="ContactUs.php">Contact Us</a></li>
          </ul>

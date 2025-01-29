@@ -31,7 +31,7 @@ if (isset($_POST['edit'])) {
 
     
     if (empty($titulli) || empty($foto) || empty($pershkrimi)) {
-        echo "<script>alert('Te gjitha fushat duhet te plotesohen!');</script>";
+       return"Ploteso te gjitha fushat!";
     } else {
         
         $newsManager->setTitulli($titulli);
@@ -53,12 +53,12 @@ if (isset($_POST['edit'])) {
 <html>
 <head>
     <title>Modifikimi i Lajmeve</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shtoLajme.css">
 </head>
 <body>
     <div id="formulari">
         <h3>Modifikimi i Lajmeve</h3>
-        <form action="" method="POST">
+        <form action="" method="POST" id="shtoLajmet">
             <a href="adminNews.php" style="text-decoration: none;">
                 <button id="back" type="button" onclick="window.location.href='adminNews.php';">BACK</button>
             </a>
@@ -77,6 +77,7 @@ if (isset($_POST['edit'])) {
             <button type="submit" name="edit">SAVE</button>
         </form>
     </div>
+    <script defer src="shtoLajmeValid.js"></script>
 </body>
 </html>
 
