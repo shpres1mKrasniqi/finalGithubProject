@@ -86,3 +86,12 @@ button[type="submit"]:hover {
         font-size: 14px;
     }
 }
+
+input.error::placeholder{
+    color: red;
+
+}
+
+input.error{
+    border:1px solid red;
+}

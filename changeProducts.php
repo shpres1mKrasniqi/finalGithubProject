@@ -29,7 +29,7 @@ if (isset($_POST['edit'])) {
     $modifikuar_nga = htmlspecialchars($_SESSION['admin_id']); 
 
     if (empty($modeli) || empty($pershkrimi) || empty($foto) || empty($cmimi)) {
-        echo "<script>alert('Te gjitha fushat duhet te plotesohen!');</script>";
+        return"Ploteso fushat!";
     } else {
     
         $prod->set_modeli($modeli);
@@ -62,15 +62,15 @@ if (isset($_POST['edit'])) {
                 <button id="back" type="button" onclick="window.location.href='adminProducts.php';">BACK</button>
             </a>
             <label for="modeli">Modeli</label>
-            <input type="text" class="inp" name="modeli" id="modeli" value="<?php echo $record['modeli']; ?>" required>
+            <input type="text" class="inp" name="modeli" id="modeli" value="<?php echo $record['modeli']; ?>">
 
             <label for="foto">Foto</label>
-            <input type="text" class="inp" name="foto" id="foto" value="<?php echo $record['foto']; ?>" required>
+            <input type="text" class="inp" name="foto" id="foto" value="<?php echo $record['foto']; ?>">
 
             <label for="pershkrimi">Përshkrimi</label>
-            <textarea class="inp" name="pershkrimi" id="pershkrimi" rows="4" required><?php echo $record['pershkrimi']; ?></textarea>
+            <textarea class="inp" name="pershkrimi" id="pershkrimi" rows="4"><?php echo $record['pershkrimi']; ?></textarea>
             <label for="cmimi">Cmimi:</label>
-            <input type="number" class="inp" id="cmimi" name="cmimi" placeholder="Cmimi i produktit" value="<?php echo $record['cmimi']; ?>" required><br><br>
+            <input type="number" class="inp" id="cmimi" name="cmimi" placeholder="Cmimi i produktit" value="<?php echo $record['cmimi']; ?>"><br><br>
 
 
             <label for="modifikuar_nga">Modifikuar Nga</label>
@@ -79,5 +79,6 @@ if (isset($_POST['edit'])) {
             <button type="submit" name="edit">SAVE</button>
         </form>
     </div>
+    <script defer src="prodValidate.js"></script>
 </body>
 </html>

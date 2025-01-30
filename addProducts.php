@@ -85,7 +85,10 @@ class AddProducts extends KonektimimeDB{
 
                 public function shtoProdukte(){
                     try{
-                        session_start();
+                        if (session_status() === PHP_SESSION_NONE) {
+                            session_start();
+                        }
+
                         if (isset($_SESSION['admin_id'])) {
                             $this->shtuar_nga = $_SESSION['admin_id'];
                         } else {
@@ -94,8 +97,8 @@ class AddProducts extends KonektimimeDB{
                         }
 
                         if (empty($this->foto) || empty($this->modeli) || empty($this->pershkrimi) || empty($this->cmimi)) {
-                            echo "<script>alert('Te gjitha fushat jane te detyrueshme!');</script>";
-                            return;
+                            
+                            return "Ploteso te gjitha fushat";
                         }
             
                         $stm= $this->dbconn->prepare("INSERT INTO produktet(foto, modeli, pershkrimi, cmimi, shtuar_nga)

@@ -74,6 +74,6 @@ if (!isset($_SESSION['admin_id'])) {
     ?>
     </table>
 </div>
-
+<script defer src=""></script>
 </body>
 </html>

@@ -27,7 +27,7 @@
          <h1>SRF AutoCenter</h1>
         </div>
          <ul id="listaemenus">
-             <li><a href="aboutUs.html">About Us</a></li>
+             <li><a href="about.php">About Us</a></li>
              <li><a href="index.php">Home</a></li>
              <li><a href="ContactUs.php">Contact Us</a></li>
 
@@ -112,8 +112,8 @@
         <div class="col" id="linqet">
             <h3>Links</h3>
             <div class="link">
-                <a href="aboutUs.html">About Us</a>
-                <a href="Home.html">Home</a>
+                <a href="about.php">About Us</a>
+                <a href="index.php">Home</a>
                 <a href="Details.html">Details</a>
                 
             </div>

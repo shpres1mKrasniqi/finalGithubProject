@@ -1,10 +1,11 @@
 //front validimi per shtimin e produkteve
 
-const shtoProduktetForma = document.getElementById('shtoProduktetForma');
+const shtoProduktetForma = document.getElementById('formulari');
 
 const modeli  = document.getElementById('modeli');
 const pershkrimi = document.getElementById('pershkrimi');
 const cmimi = document.getElementById('cmimi');
+const foto = document.getElementById('foto');
 
 
 shtoProduktetForma.addEventListener('submit', function (e){
@@ -24,6 +25,13 @@ shtoProduktetForma.addEventListener('submit', function (e){
         pershkrimi.style.borderColor='red';
         pershkrimi.classList.add('error');
         pershkrimi.setAttribute('placeholder', 'Pershkrimi eshte Obligativ');
+
+    }
+    if(foto.value.trim()===''){
+        mesazheGabimi.push('Foto eshte Obligative!');
+        foto.style.borderColor='red';
+        foto.classList.add('error');
+        foto.setAttribute('placeholder', 'Foto eshte Obligative');
 
     }
     if(cmimi.value.trim()===''){
