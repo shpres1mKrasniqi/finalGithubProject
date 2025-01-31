@@ -15,7 +15,7 @@ if (isset($_POST['edit'])) {
 
    
     if (empty($emri) || empty($mbiemri) || empty($emaili) || empty($paswordi)) {
-        echo "<script>alert('Te gjitha fushat duhet te plotesohen!');</script>";
+        return"Ploteso te gjitha fushat!";
     } elseif (!filter_var($emaili, FILTER_VALIDATE_EMAIL)) {
         echo "<script>alert('Emaili nuk eshte valid!');</script>";
     } elseif (strlen($paswordi) < 6) {
@@ -65,6 +65,6 @@ if (isset($_POST['edit'])) {
             <button type="submit" name="edit">SAVE</button>
         </form>
     </div>
-    <script defer src="prodValidate.js"></script>
+    <script defer src="validimiChange.js"></script>
 </body>
 </html>

@@ -886,10 +886,6 @@ Teknologjia e përparuar e autopilotit e bën atë të dallohet në luksin e tij
     ],
 
 ];
-
-
-
-
 $veturatDB->perditesoVeturat('Aventador', [
     'price' => '1000000',
     'description' => 'Kategoria: Sportive'

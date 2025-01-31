@@ -36,9 +36,9 @@
          <h1>SRF AutoCenter</h1>
         </div>
          <ul id="listaemenus">
-             <li><a href="aboutUs.html">About Us</a></li>
-             <li><a href="loginiAdmin.html">Admin</a></li>
-             <li><a href="contactus.html">Contact Us</a></li>
+         <li><a href="about.php">About Us</a></li>
+             <li><a href="loginiAdmin.php">Admin</a></li>
+             <li><a href="ContactUs.php">Contact Us</a></li>
          </ul>
          <div class="menuIcon">
 
@@ -79,7 +79,7 @@
                    
                 </div>
                 <div class="skeAcc">
-                    <p>Don't have an account? <a href="login.html">Login</a></p>
+                    <p>Don't have an account? <a href="login.php">Login</a></p>
                 </div>
                     <button type="submit" class="btnSignup" name="save">Signup</button>
             </form>

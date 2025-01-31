@@ -28,23 +28,24 @@
     <div class="contact-us">
         <div class="contact-container">
             <h2>Na Kontaktoni</h2>
-            <p>Jemi kÃ«tu pÃ«r tÃ« ndihmuar! Na kontaktoni pÃ«r Ã§do pyetje apo sugjerim lidhur me Autosallonin tonÃ«.</p>
-            <form action="" method="POST" class="contact-form">
+            <p>Jemi ketu per te ndihmuar! Na kontaktoni per cdo pyetje apo sugjerim lidhur me Autosallonin tone.</p>
+            <form action="" method="POST" class="contact-form" id="kontaktimi">
                 <div class="form-group">
                     <label for="name">Emri dhe mbiemri juaj</label>
-                    <input type="text" id="name" name="emridheMbiemri" placeholder="Shkruani emrin dhe mbiemrin tuaj" required>
+                    <input type="text" id="name" name="emridheMbiemri" placeholder="Shkruani emrin dhe mbiemrin tuaj">
                 </div>
                 <div class="form-group">
                     <label for="email">Email-i juaj</label>
-                    <input type="email" id="email" name="email" placeholder="Shkruani email-in tuaj" required>
+                    <input type="email" id="email" name="email" placeholder="Shkruani email-in tuaj">
                 </div>
                 <div class="form-group">
                     <label for="message">Mesazhi juaj</label>
-                    <textarea id="message" name="mesazhi" placeholder="Shkruani mesazhin tuaj" rows="4" required></textarea>
+                    <textarea id="message" name="mesazhi" placeholder="Shkruani mesazhin tuaj" rows="4"></textarea>
                 </div>
                 <button type="submit" class="buton" name="save">Dergo</button>
             </form>
         </div>
     </div>
+    <script defer src="contact.js"></script>
 </body>
 </html>

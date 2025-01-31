@@ -1,5 +1,5 @@
 <?php
-include 'loginconnect.php'; 
+include 'loginverify.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      
         session_start();
         $_SESSION['user_id'] = $user['id'];
-        header("Location: Home.html");
+        header("Location: index.php");
         exit();
     } else {
         
@@ -42,9 +42,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <h1>SRF AutoCenter</h1>
            </div>
             <ul id="listaemenus">
-                <li><a href="aboutUs.html">About Us</a></li>
-                <li><a href="loginiAdmin.html">Admin</a></li>
-                <li><a href="contactus.html">Contact Us</a></li>
+               <li><a href="about.php">About Us</a></li>
+                <li><a href="loginiAdmin.php">Admin</a></li>
+                <li><a href="ContactUs.php">Contact Us</a></li>
             </ul>
             <div class="menuIcon">
 
@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input type="password" name="password" placeholder="Password" id="pasiiUser">
             </div>
             <div class="dont">
-                <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+                <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
             </div>
            
                 <button type="submit" class="btn">Login</button>

@@ -17,7 +17,7 @@
         <ul id="listaemenus">
             <li><a href="signup.php">Signup</a></li>
             <li><a href="login.php">Login</a></li>
-            <li><a href="AboutUs.html">About Us</a></li>
+            <li><a href="about.php">About Us</a></li>
         </ul>
         <div class="menuIcon">
             <i class="fa-solid fa-bars" onclick="menu()"></i>

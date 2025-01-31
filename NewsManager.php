@@ -74,12 +74,18 @@ class NewsManager extends KonektimimeDB {
 
     public function addNews() {
         try {
-            session_start();
+            if (session_status() === PHP_SESSION_NONE) {
+                session_start();
+            }
             if (isset($_SESSION['admin_id'])) {
                 $this->shtuar_nga = $_SESSION['admin_id'];
             } else {
-                echo "Duhet te jeni tÃ« loguar si admin pÃ«r tÃ« shtuar lajme.";
+                echo "Duhet te jeni te loguar si admin per te shtuar lajme.";
                 return;
+            }
+
+            if (empty($this->titulli) || empty($this->foto) || empty($this->pershkrimi)) {
+                return"Ploteso krejt fushat!";
             }
 
             $stmt = $this->dbconn->prepare("INSERT INTO lajmet (titulli, foto, pershkrimi, shtuar_nga) 

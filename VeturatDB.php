@@ -7,6 +7,7 @@ class VeturatDB {
 
     public function __construct() {
         $this->dbconn = ConnectDB::getInstance()->getConnection();
+        
     }
 
     public function shtoVeturat($veturat) {
@@ -16,6 +17,7 @@ class VeturatDB {
                 (:emri, :motorri, :horsepower, :shpejtesia, :pershpejtimi, :transmission, :konsuminaftes, :komoditeti, :materialet_brenda, :price, :description)";
         
         $stmt = $this->dbconn->prepare($sql);
+        
 
         foreach ($veturat as $vetura) {
             $stmt->execute([
@@ -34,10 +36,6 @@ class VeturatDB {
         }
     }
 
-
-
-
-   
     public function merrVeturat() {
         $sql = "SELECT * FROM Veturat";
         $stmt = $this->dbconn->query($sql);

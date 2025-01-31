@@ -8,7 +8,7 @@
 html, body{
     height: 100%;
     width: 100%;
-    background: rgb(237, 237, 237);
+    background: #1F75FE;
    
 }
 
@@ -94,6 +94,7 @@ nav ul li a{
     border: none;
     box-shadow: 0px 4px 8px rgb(0, 0, 0, 0.4);
     border-radius: 20px;
+    background: #00CCFF;
 }
 
 .formcontaineri h2{
@@ -114,6 +115,10 @@ nav ul li a{
 
 .formcontaineri input::placeholder{
     color: #020255;
+}
+
+.formcontaineri input:focus{
+    outline:none;
 }
 
 .formcontaineri .dont{
@@ -156,12 +161,9 @@ nav ul li a{
     border: none;
     box-shadow: 0px 4px 8px rgb(0, 0, 0, 0.4);
     border-radius: 20px;
-    
+    background: #00CCFF;
 }
 
-.signupContainer.success input {
-    border-color: greenyellow;
-}
 .signupContainer.error input{
     border-color: red;
 }
@@ -183,6 +185,9 @@ nav ul li a{
 }
 .signupContainer input::placeholder{
     color: #020255;
+}
+.signupContainer input:focus{
+    outline:  none;
 }
 .signupContainer .skeAcc{
     font-size: 12px;

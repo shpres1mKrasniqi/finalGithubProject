@@ -89,7 +89,18 @@ body {
     color: #fff;
 }
 
-/*Nese do mi kthy ngjyrat qe i ke pas*/
-/*#00ffdd - per buton dhe h2
-#1d4552 - per background te pjesa e inputav edhe backgroundi i bodyt
-#2a5c6b - per background te divit per ket formen qe e ke ba */
+input.error::placeholder{
+    color: red;
+
+}
+
+input.error{
+    border:1px solid red;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 15px;
+    }
+}
+

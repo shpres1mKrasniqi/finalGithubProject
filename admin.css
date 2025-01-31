@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: #DFF2FF;
+    background-color: #00CCFF;
 }
 header h1{
     font-size: 27px;
@@ -44,7 +44,7 @@ header h1{
 
 img{
     width: 200px;
-    height: 200px;
+    height: 300px;
     text-align: center;
     margin: 0 auto;
     display: block;

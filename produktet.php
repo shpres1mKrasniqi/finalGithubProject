@@ -4,7 +4,7 @@
 
     $tedhenat = new AddProducts();
 
-    $allTeDhenat = $tedhenat->shfaqTedhenat();
+    $allTeDhenat = $tedhenat->shfaqProduktet();
 ?>
 
 <!DOCTYPE html>
@@ -27,9 +27,10 @@
          <h1>SRF AutoCenter</h1>
         </div>
          <ul id="listaemenus">
-             <li><a href="aboutUs.html">About Us</a></li>
-             <li><a href="Home.html">Home</a></li>
-             <li><a href="contactus.html">Contact Us</a></li>
+             <li><a href="about.php">About Us</a></li>
+             <li><a href="index.php">Home</a></li>
+             <li><a href="ContactUs.php">Contact Us</a></li>
+
          </ul>
          <div class="menuIcon">
 
@@ -67,9 +68,13 @@
         <h3><?php echo $value['modeli']; ?></h3>
         <p><?php echo $value['pershkrimi']; ?></p>
         <h6><?php echo $value['cmimi']; ?></h6>
-        <p>Shtuar nga admin: <?php echo $value['shtuar_nga']; ?></p>
-        <p>Modifikuar nga admin: <?php echo $value ['modifikuar_nga']?></p>   
+         
         <button class="view-audiA5" onclick="window.location.href='Details.html'">VIEW DETAILS</button>
+        <form action="buy.php" method="get">
+            <input type="hidden" name="id" value="<?php echo $value['id'];?>">
+        <button class="buy" onclick="window.location.href='buy.php'">BUY</button>
+        </form>
+        
         
 </a>
 
@@ -107,8 +112,8 @@
         <div class="col" id="linqet">
             <h3>Links</h3>
             <div class="link">
-                <a href="aboutUs.html">About Us</a>
-                <a href="Home.html">Home</a>
+                <a href="about.php">About Us</a>
+                <a href="index.php">Home</a>
                 <a href="Details.html">Details</a>
                 
             </div>

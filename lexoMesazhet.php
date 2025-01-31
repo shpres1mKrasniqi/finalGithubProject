@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['admin_id'])) {
+    header('Location: loginiAdmin.php');
+    exit();
+}
 require_once('contactphp.php');
 $teDhenat = new ContactUsPHP();
 $krejtteDhenat = $teDhenat->lexoMesazhe();
