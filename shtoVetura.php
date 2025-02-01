@@ -14,7 +14,11 @@ require_once('MenaxhoVeturat.php');
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
     <link rel="stylesheet" href="shtoLajme.css" />
+=======
+    <link rel="stylesheet" href="shtoVetura.css">
+>>>>>>> 4085cec11b7414cd043510534f66c709a06fa274
    
     <title>Shto Veturat</title>
 </head>

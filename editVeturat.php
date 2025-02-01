@@ -9,7 +9,11 @@ if (!isset($_SESSION['admin_id'])) {
 require_once('MenaxhoVeturat.php');
 
 
+<<<<<<< HEAD
+$newsManager = new MenaxhoVeturat();
+=======
 $menaxhoVeturat = new MenaxhoVeturat();
+>>>>>>> 4085cec11b7414cd043510534f66c709a06fa274
 
 
 if (!isset($_GET['id'])) {
@@ -21,7 +25,11 @@ if (!isset($_GET['id'])) {
 }
 
 $id = $_GET['id'];
+<<<<<<< HEAD
+$record = $newsManager->lexoVeturat($id);
+=======
 $record = $menaxhoVeturat->lexoVeturat($id);
+>>>>>>> 4085cec11b7414cd043510534f66c709a06fa274
 
 if (isset($_POST['edit'])) {
     $titulli = htmlspecialchars(trim($_POST['titulli']));
@@ -34,6 +42,15 @@ if (isset($_POST['edit'])) {
         echo "<script>alert('Te gjitha fushat duhet te plotesohen!');</script>";
     } else {
         
+<<<<<<< HEAD
+        $newsManager->setTitulli($titulli);
+        $newsManager->setFoto($foto);
+        $newsManager->setPershkrimi($pershkrimi);
+        $newsManager->setModifikuarNga($modifikuarNga);
+
+        
+        $newsManager->editVeturat($id);
+=======
         $menaxhoVeturat->setTitulli($titulli);
         $menaxhoVeturat->setFoto($foto);
         $menaxhoVeturat->setPershkrimi($pershkrimi);
@@ -41,6 +58,7 @@ if (isset($_POST['edit'])) {
 
         
         $menaxhoVeturat->editVeturat($id);
+>>>>>>> 4085cec11b7414cd043510534f66c709a06fa274
 
         echo "<script>
             alert('Vetura u editua me sukses!');
@@ -53,7 +71,10 @@ if (isset($_POST['edit'])) {
 <html>
 <head>
     <title>Modifikimi i Veturave</title>
-    <link rel="stylesheet" href="editveturat.css">
+<<<<<<< HEAD
+    <link rel="stylesheet" href="style.css">
+=======
+>>>>>>> 4085cec11b7414cd043510534f66c709a06fa274
 </head>
 <body>
     <div id="formulari">
@@ -77,5 +98,94 @@ if (isset($_POST['edit'])) {
             <button type="submit" name="edit">SAVE</button>
         </form>
     </div>
+<<<<<<< HEAD
+=======
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: navy;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#formulari {
+    background-color: #00CCFF;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #00CCFF;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #007bff;
+}
+
+textarea {
+    resize: none;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#back {
+    background-color: #007bff;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+#back:hover {
+    background-color:#0056b3;
+}
+
+    </style>
+>>>>>>> 4085cec11b7414cd043510534f66c709a06fa274
 </body>
 </html>
