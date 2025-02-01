@@ -25,9 +25,9 @@ $krejtteDhenat = $teDhenat->lexoBlerjet();
 
 <div class="kontinieri" id="kontinieri" style="overflow-x:auto;">
     <table>
-    <a href="produktet.php">
+    <button id="bak" onclick="window.location.href='adminLogin.php';">BACK</button>
 
-<button id="bak">BACK</button>
+
         <tr>
             <th>Emri i Bleresit</th>
             <th>Mbiemri</th>

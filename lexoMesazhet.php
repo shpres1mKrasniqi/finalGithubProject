@@ -25,9 +25,7 @@ $krejtteDhenat = $teDhenat->lexoMesazhe();
 
 <div class="kontinieri" id="kontinieri" style="overflow-x:auto;">
     <table>
-    <a href="ContactUs.php">
-
-<button id="bak">BACK</button>
+    <button id="bak" onclick="window.location.href='adminLogin.php';">BACK</button>
         <tr>
             <th>Emri dhe Mbiemri</th>
             <th>Email-i</th>
