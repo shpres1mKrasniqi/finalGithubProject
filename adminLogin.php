@@ -42,7 +42,17 @@ $numriProdukteve = $tedhenat->numeroProduktet();
              <li><a href="shtoLajme.php">Add News</a></li>
              <li><a href="leximiUserave.php">Users</a></li>
              <li><a href="shtoProdukte.php">Add Products</a></li>
+<<<<<<< HEAD
              <li><a href="shtoVetura.php">Add Cars</a></li>
+=======
+
+             <li><a href="adminProducts.php">View Products</a></li>
+             <li><a href="lexoLajme.php">View News</a></li>
+             <li><a href="lexoBlerjet.php">Sales</a></li>
+
+             <li><a href="shtoVetura.php">Add Cars</a></li>
+
+>>>>>>> dca935ef938e979a4531d9595d974621bef81750
          </ul>
          <div class="menuIcon">
 
@@ -92,10 +102,6 @@ $numriProdukteve = $tedhenat->numeroProduktet();
             <h6><?php echo $numriProdukteve;?></h6>   
     
         </div>
-
-
-     
-       
     </div>
 </main>
 
