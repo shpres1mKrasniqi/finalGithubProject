@@ -1,5 +1,17 @@
 <?php
 
+session_start();
+
+
+if (!isset($_SESSION['emri'])) {
+    header("Location: login.php");
+    exit();
+}
+
+header("Cache-Control: no-cache, no-store, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
+
 require_once('KonektimimeDB.php');
 require_once('addProducts.php');
 require_once('Blejvetur.php');
@@ -43,17 +55,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save'])) {
             </a>
 
             <label for="emri">Emri:</label>
-<<<<<<< HEAD
-            <input type="text" class="inp" name="emri" id="emri" required>
-
-            <label for="mbiemri">Mbiemri:</label>
-            <input type="text" class="inp" name="mbiemri" id="mbiemri" required>
-=======
             <input type="text" class="inp" name="emri" id="emri">
 
             <label for="mbiemri">Mbiemri:</label>
             <input type="text" class="inp" name="mbiemri" id="mbiemri">
->>>>>>> 4085cec11b7414cd043510534f66c709a06fa274
             
             <?php if ($veturaID): ?>
                 <label for="cmimi">Cmimi i Vetures:</label>
@@ -61,11 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save'])) {
             <?php endif; ?>
 
             <label for="kartela">Kodi i Karteles tuaj:</label>
-<<<<<<< HEAD
-            <input type="text" class="inp" name="kartela" id="kartela" required>
-=======
             <input type="text" class="inp" name="kartela" id="kartela">
->>>>>>> 4085cec11b7414cd043510534f66c709a06fa274
 
             <button type="submit" name="save">BLEJ</button>
         </form>

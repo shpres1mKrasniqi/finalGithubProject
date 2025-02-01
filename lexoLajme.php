@@ -1,4 +1,15 @@
 <?php
+session_start();
+
+
+if (!isset($_SESSION['emri'])) {
+    header("Location: login.php");
+    exit();
+}
+
+header("Cache-Control: no-cache, no-store, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
 require_once('NewsManager.php');
 $newsManager = new NewsManager();
 $allNews = $newsManager->shfaqLajmet();

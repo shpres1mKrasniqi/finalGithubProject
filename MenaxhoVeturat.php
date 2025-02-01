@@ -82,24 +82,13 @@ class MenaxhoVeturat extends KonektimimeDB {
                 return;
             }
 
-<<<<<<< HEAD
-            $stmt = $this->dbconn->prepare("INSERT INTO shto (titulli, foto, shtuar_nga,modifikuar_nga,pershkrimi) 
-                                            VALUES (:titulli, :foto,  :shtuar_nga, :modifikuar_nga,:pershkrimi)");
-=======
             $stmt = $this->dbconn->prepare("INSERT INTO shto (titulli, foto, shtuar_nga) 
                                             VALUES (:titulli, :foto,  :shtuar_nga)");
->>>>>>> 4085cec11b7414cd043510534f66c709a06fa274
 
             $stmt->bindParam(':titulli', $this->titulli);
             $stmt->bindParam(':foto', $this->foto);
             $stmt->bindParam(':shtuar_nga', $this->shtuar_nga);
-<<<<<<< HEAD
-            $stmt->bindParam(':modifikuar_nga', $this->modifikuar_nga);
-            $stmt->bindParam(':pershkrimi', $this->pershkrimi);
-
-=======
          
->>>>>>> 4085cec11b7414cd043510534f66c709a06fa274
             $stmt->execute();
             echo "<script>
             alert('Vetura  u shtua me sukses!');
@@ -163,21 +152,12 @@ class MenaxhoVeturat extends KonektimimeDB {
 }
 
 if (isset($_POST['save'])) {
-<<<<<<< HEAD
-    $news = new MenaxhoVeturat();
-
-    $news->setTitulli($_POST['titulli']);
-    $news->setFoto($_POST['foto']);
-    $news->setPershkrimi($_POST['pershkrimi']);
-    $news->shtoVeturat();
-=======
     $cars = new MenaxhoVeturat();
 
     $cars->setTitulli($_POST['titulli']);
     $cars->setFoto($_POST['foto']);
     $cars->setPershkrimi($_POST['pershkrimi']);
     $cars->shtoVeturat();
->>>>>>> 4085cec11b7414cd043510534f66c709a06fa274
 }
 
 ?>
