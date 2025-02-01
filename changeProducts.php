@@ -12,8 +12,8 @@ $prod = new AddProducts();
 
 if (!isset($_GET['id'])) {
     echo "<script>
-        alert('ID e lajmit mungon!');
-        document.location='adminNews.php';
+        alert('ID e produktit mungon!');
+        document.location='adminProducts.php';
     </script>";
     exit();
 }

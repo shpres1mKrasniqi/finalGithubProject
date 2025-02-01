@@ -1,5 +1,4 @@
 <?php
-
 require_once('NewsManager.php');
 $newsManager = new NewsManager();
 $allNews = $newsManager->shfaqLajmet();

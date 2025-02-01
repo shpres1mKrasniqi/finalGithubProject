@@ -111,7 +111,7 @@ class AddProducts extends KonektimimeDB{
                         $stm->execute();
                         echo "<script>
                         alert('Produkti u shtua me sukses!');
-                        document.location='shtoProdukte.php';
+                        document.location='adminProducts.php';
                         </script>";
                     }
 

@@ -82,7 +82,7 @@ class ContactUsPHP extends KonektimimeDB {
             
             echo "<script>
                     alert('Mesazhi eshte derguar me sukses');
-                    document.location='lexoMesazhet.php';
+                    document.location='index.php';
                   </script>";
         } catch (PDOException $e) {
             

@@ -1,4 +1,15 @@
 <?php
+session_start();
+
+
+if (!isset($_SESSION['emri'])) {
+    header("Location: login.php");
+    exit();
+}
+
+header("Cache-Control: no-cache, no-store, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
 require_once('regjistri.php');
 
 
@@ -27,8 +38,9 @@ if (isset($_COOKIE['emri'])) {
         <a href="about.php">About Us</a>
         <a href="lexoLajme.php">News</a>
         <a href="produktet.php">Products</a>
-        <a href="Details.html">Details</a>
+        <a href="lexoVeturat.php">Cars</a>
         <a href="ContactUs.php">Contact-Us</a>
+        <a href="logout.php" onclick="return confirm('A jeni i sigurt qe deshironi te dilni?');">LogOut</a>
     </div>
     </div>
 
